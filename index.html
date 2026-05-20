@@ -22,13 +22,17 @@
             color: var(--text-color);
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            padding: 60px 0;
-            position: relative;
+            padding: 60px 20px;
         }
 
-        .container { max-width: 850px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 850px; margin: 0 auto; }
 
-        header { margin-bottom: 50px; border-bottom: 3px solid var(--text-color); padding-bottom: 20px; }
+        header {
+            margin-bottom: 50px;
+            border-bottom: 3px solid var(--text-color);
+            padding-bottom: 20px;
+            position: relative;
+        }
         h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1.5px; text-transform: uppercase; }
         .subtitle { font-family: 'Fira Code', monospace; font-size: 1.1rem; color: var(--text-muted); font-weight: 500; }
         section { margin-bottom: 50px; }
@@ -49,56 +53,56 @@
         .skill-group li { color: var(--text-muted); margin-bottom: 6px; }
         .skill-group li::before { content: "→ "; color: var(--text-color); }
         
-        /* EN ALTTAKI GIF ICIN MERKEZLEME VE BOYUT AYARI */
-        .bottom-gif {
-            display: block;
-            margin: 60px auto 20px auto; /* Üstten ve alttan boşluk bırakıp yatayda ortalar */
-            max-width: 350px; /* Genişlik sınırı */
-            width: 100%;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-        }
-
-        footer { border-top: 1px solid var(--border-color); padding: 30px 20px; display: flex; justify-content: space-between; font-family: 'Fira Code', monospace; font-size: 0.95rem; background-color: var(--bg-color); margin-top: 30px; }
+        footer { border-top: 1px solid var(--border-color); padding: 30px 20px; display: flex; justify-content: space-between; font-family: 'Fira Code', monospace; font-size: 0.95rem; background-color: var(--bg-color); margin-top: 50px; }
         footer a { color: var(--text-color); text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--text-color); transition: color 0.2s, border-color 0.2s; }
         footer a:hover { color: var(--text-muted); border-color: var(--text-muted); }
 
-        .corner-image {
+        /* SAĞ ÜST KÖŞEDEKİ PİKSEL PROFİL FOTOĞRAFI */
+        .corner-image-container {
             position: absolute;
-            top: 40px;
-            right: 40px;
-            width: 120px;
-            height: 120px;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
             border-radius: 50%;
+            border: none;
+            background-color: transparent;
+        }
+
+        .corner-image-container img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border: 3px solid var(--border-color);
-            z-index: 1000;
-            background-color: #111;
+            display: block;
+        }
+
+        /* EN ALTTAKİ GÖZ GIF'İ - Çerçevesiz ve Ortalanmış */
+        .bottom-gif {
+            display: block;
+            margin: 60px auto 20px auto;
+            max-width: 250px; /* Göz animasyonu için ideal boyut */
+            width: 100%;
+            border: none; /* Beyaz çerçeve tamamen kaldırıldı */
+            background: transparent;
         }
 
         @media (max-width: 600px) {
-            .corner-image {
-                position: relative;
-                top: 0;
-                right: 0;
-                margin: 0 auto 30px auto;
-                display: block;
-                width: 150px;
-                height: 150px;
-            }
+            .corner-image-container { position: relative; top: 0; right: 0; margin: 0 auto 30px auto; display: block; width: 150px; height: 150px; }
             body { padding: 40px 20px; }
             footer { flex-direction: column; gap: 15px; }
             h1 { font-size: 2.8rem; }
-            .bottom-gif { max-width: 280px; } /* Mobilde biraz daha küçük görünsün */
         }
     </style>
 </head>
 <body>
 
-    <img src="profil.jpg" alt="Doğukan Sağlık" class="corner-image">
-
     <div class="container">
         <header>
+            <div class="corner-image-container">
+                <img src="profil.png" alt="Doğukan Sağlık Art">
+            </div>
+
             <h1>Doğukan Sağlık</h1>
             <p class="subtitle">Bilgisayar Mühendisliği Öğrencisi</p>
         </header>
@@ -160,7 +164,7 @@
             </div>
         </section>
 
-        <img src="eye.gif" alt="Animasyon" class="bottom-gif">
+        <img src="eye.gif" alt="Eye Animation" class="bottom-gif">
 
     </div>
 
