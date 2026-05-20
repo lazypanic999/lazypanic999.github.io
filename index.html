@@ -1,1 +1,165 @@
-<h1>Merhaba, sitem yapım aşamasında!</h1>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doğukan Sağlık | Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&family=Inter:wght@300;500;800&display=swap');
+
+        :root {
+            --bg-color: #07070a;
+            --text-main: #e2e2e5;
+            --text-muted: #8b8b99;
+            --accent-glow: rgba(99, 102, 241, 0.4);
+            --card-bg: rgba(20, 20, 25, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.15), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(15, 118, 110, 0.15), transparent 25%);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            margin-bottom: 5rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .subtitle {
+            font-family: 'Fira Code', monospace;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #555;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card h3 {
+            font-family: 'Fira Code', monospace;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .tags {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            font-family: 'Fira Code', monospace;
+            background: #1a1a24;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            color: var(--text-muted);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Doğukan Sağlık</h1>
+            <p class="subtitle">~$ root@cloud-native-dev ~#</p>
+        </header>
+
+        <section>
+            <h2 class="section-title">Projeler & Çalışmalar</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>> OpsCommand</h3>
+                    <p>DevOps ekipleri için Kubernetes üzerinde çalışan bulut tabanlı bir olay müdahale (Incident Response) ve gerçek zamanlı işbirliği platformu.</p>
+                    <div class="tags">
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">DevOps</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>> RTOS ADAS Simulation</h3>
+                    <p>Radar ISR Compute ve Log görevlerini içeren, Mutex ve Queue mekanizmalarıyla senkronize edilmiş gerçek zamanlı işletim sistemi simülasyonu.</p>
+                    <div class="tags">
+                        <span class="tag">RTOS</span>
+                        <span class="tag">C/C++</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>> 5G Core & Network</h3>
+                    <p>Minikube ortamında Open5GS ve UERANSIM kullanarak 5G Core ağının konteynerize edilmesi ve UE kayıt doğrulama süreçleri.</p>
+                    <div class="tags">
+                        <span class="tag">Wireshark</span>
+                        <span class="tag">Open5GS</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Teknoloji Yığını</h2>
+            <div class="card">
+                <p>Ubuntu ağırlıklı Linux ortamlarında, terminal tabanlı iş akışları. Ağ yapılandırmaları, konteyner orkestrasyonu (Docker/K8s) ve BLC Haberleşme staj deneyimiyle şekillenen altyapı mimarisi.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
