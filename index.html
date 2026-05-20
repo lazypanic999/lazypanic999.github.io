@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doğukan Sağlık | Portfolio</title>
+    <title>Doğukan Sağlık | Portfolyo</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&family=Inter:wght@300;500;800&display=swap');
+        /* FONT YAPILANDIRMASI AYNEN KORUNDU */
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;800&display=swap');
 
         :root {
-            --bg-color: #07070a;
-            --text-main: #e2e2e5;
-            --text-muted: #8b8b99;
-            --accent-glow: rgba(99, 102, 241, 0.4);
-            --card-bg: rgba(20, 20, 25, 0.6);
+            --bg-color: #000000;       /* ARKA PLAN TAMAMEN SİYAH */
+            --text-color: #ffffff;     /* YAZILAR TAMAMEN BEYAZ */
+            --text-muted: #a1a1aa;     /* YARDIMCI METİNLER GRİ */
+            --border-color: #27272a;   /* KOYU GRİ KENARLIKLAR */
+            --card-bg: #09090b;        /* KARTLAR İÇİN HAFİF AÇIK SİYAH */
         }
 
         * {
@@ -23,143 +24,263 @@
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-main);
+            color: var(--text-color);
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.15), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(15, 118, 110, 0.15), transparent 25%);
+            padding: 60px 20px;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 4rem 2rem;
         }
 
         header {
-            margin-bottom: 5rem;
-            animation: fadeIn 1.5s ease-out;
+            margin-bottom: 50px;
+            border-bottom: 3px solid var(--text-color);
+            padding-bottom: 20px;
         }
 
         h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 20px var(--accent-glow);
+            letter-spacing: -1.5px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
         }
 
         .subtitle {
             font-family: 'Fira Code', monospace;
-            color: var(--text-muted);
             font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 500;
         }
 
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #333;
-            padding-bottom: 0.5rem;
+        section {
+            margin-bottom: 50px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--text-color);
+            padding-left: 15px;
+        }
+
+        .profile-text {
+            font-size: 1.15rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
         .card {
-            background: var(--card-bg);
-            border: 1px solid #222;
-            padding: 2rem;
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 4px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: #555;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: #52525b;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.03);
         }
 
         .card h3 {
             font-family: 'Fira Code', monospace;
-            margin-bottom: 1rem;
-            color: #fff;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 1rem;
         }
 
         .tags {
-            margin-top: 1.5rem;
+            margin-top: 20px;
             display: flex;
-            gap: 0.5rem;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
         .tag {
-            font-size: 0.8rem;
             font-family: 'Fira Code', monospace;
-            background: #1a1a24;
-            padding: 0.3rem 0.6rem;
+            font-size: 0.8rem;
+            background-color: #27272a;
+            padding: 4px 10px;
             border-radius: 4px;
-            color: var(--text-muted);
+            color: var(--text-color);
+            font-weight: 500;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-group h4 {
+            font-family: 'Fira Code', monospace;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        .skill-group ul {
+            list-style: none;
+        }
+
+        .skill-group li {
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .skill-group li::before {
+            content: "→ ";
+            color: var(--text-color);
+        }
+
+        footer {
+            margin-top: 80px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid var(--text-color);
+        }
+
+        footer a:hover {
+            color: var(--text-muted);
+            border-color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            footer {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
         <header>
             <h1>Doğukan Sağlık</h1>
-            <p class="subtitle">~$ root@cloud-native-dev ~#</p>
+            <p class="subtitle">Bilgisayar Mühendisliği Öğrencisi</p>
         </header>
 
         <section>
+            <h2 class="section-title">Hakkımda</h2>
+            <p class="profile-text">
+                Ostim Teknik Üniversitesi Bilgisayar Mühendisliği Bölümü 3. sınıf öğrencisiyim. Bulut bilişim altyapıları, konteynerizasyon teknolojileri ve gerçek zamanlı işletim sistemleri (RTOS) üzerinde çalışmalar yürütüyorum. Karmaşık sistem mimarilerini optimize etmeye ve DevOps süreçlerini otomatikleştirmeye odaklanıyorum.
+            </p>
+        </section>
+
+        <section>
             <h2 class="section-title">Projeler & Çalışmalar</h2>
-            <div class="grid">
+            <div class="list-container">
                 <div class="card">
                     <h3>> OpsCommand</h3>
-                    <p>DevOps ekipleri için Kubernetes üzerinde çalışan bulut tabanlı bir olay müdahale (Incident Response) ve gerçek zamanlı işbirliği platformu.</p>
+                    <p>DevOps ekipleri için Kubernetes üzerinde kurgulanmış, mikroservis mimarisine sahip bulut tabanlı bir olay müdahale (Incident Response) ve gerçek zamanlı işbirliği platformu.</p>
                     <div class="tags">
                         <span class="tag">Kubernetes</span>
                         <span class="tag">DevOps</span>
+                        <span class="tag">Cloud Native</span>
                     </div>
                 </div>
 
                 <div class="card">
                     <h3>> RTOS ADAS Simulation</h3>
-                    <p>Radar ISR Compute ve Log görevlerini içeren, Mutex ve Queue mekanizmalarıyla senkronize edilmiş gerçek zamanlı işletim sistemi simülasyonu.</p>
+                    <p>Otonom sürüş destek sistemleri için geliştirilmiş; Radar ISR Compute ve Log görevlerini içeren, Mutex ile Queue mekanizmalarıyla senkronize edilmiş kritik zamanlı işletim sistemi simülasyonu.</p>
                     <div class="tags">
                         <span class="tag">RTOS</span>
                         <span class="tag">C/C++</span>
+                        <span class="tag">Embedded Systems</span>
                     </div>
                 </div>
 
                 <div class="card">
-                    <h3>> 5G Core & Network</h3>
-                    <p>Minikube ortamında Open5GS ve UERANSIM kullanarak 5G Core ağının konteynerize edilmesi ve UE kayıt doğrulama süreçleri.</p>
+                    <h3>> 5G Core Ağ Araştırmaları</h3>
+                    <p>Minikube ve Docker ortamlarında Open5GS og UERANSIM yapılandırmaları ile uçtan uca simüle edilmiş 5G Core ağ trafiği yönetimi ve Wireshark ile paket analizi doğrulamaları.</p>
                     <div class="tags">
                         <span class="tag">Wireshark</span>
                         <span class="tag">Open5GS</span>
-                        <span class="tag">Docker</span>
+                        <span class="tag">Minikube</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2 class="section-title">Teknoloji Yığını</h2>
-            <div class="card">
-                <p>Ubuntu ağırlıklı Linux ortamlarında, terminal tabanlı iş akışları. Ağ yapılandırmaları, konteyner orkestrasyonu (Docker/K8s) ve BLC Haberleşme staj deneyimiyle şekillenen altyapı mimarisi.</p>
+            <h2 class="section-title">Deneyim</h2>
+            <div class="list-container">
+                <div class="card">
+                    <h3>> BLC Haberleşme ve Güvenlik</h3>
+                    <p>Stajyer Mühendis olarak; NetBox entegrasyonu, IPAM (IP Adres Yönetimi), veri merkezi varlık takibi ve bulut altyapı bileşenlerinin ağ konfigürasyonları süreçlerinde aktif rol aldım.</p>
+                    <div class="tags">
+                        <span class="tag">NetBox</span>
+                        <span class="tag">Network Admin</span>
+                        <span class="tag">Staj</span>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <section>
+            <h2 class="section-title">Yetenekler</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Altyapı & Bulut</h4>
+                    <ul>
+                        <li>Docker & Kubernetes</li>
+                        <li>Helm Deployment</li>
+                        <li>Ubuntu Server / Bash</li>
+                        <li>Git & GitHub Actions</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Programlama</h4>
+                    <ul>
+                        <li>C / C++</li>
+                        <li>Go (Golang)</li>
+                        <li>Python</li>
+                        <li>YAML Configuration</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div>© 2026 dogukansaglik.com</div>
+            <div style="display: flex; gap: 20px;">
+                <a href="https://github.com/lazypanic999" target="_blank">GitHub</a>
+                <a href="mailto:hi@dogukansaglik.com">İletişim</a>
+            </div>
+        </footer>
     </div>
+
 </body>
 </html>
