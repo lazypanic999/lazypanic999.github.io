@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doğukan Sağlık | Portfolyo</title>
     <style>
-        /* --- TEMEL PORTFOLYO STİLLERİ (Değişmedi) --- */
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;800&display=swap');
+        /* --- TEMEL PORTFOLYO STİLLERİ --- */
+        
+        /* YENİ EKLENEN FONT KODU (Space Mono ve Fira Code) */
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
         :root {
             --bg-color: #000000;
@@ -21,7 +23,10 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Inter', sans-serif;
+            
+            /* SİTENİN ANA FONTU BURADA DEĞİŞTİ */
+            font-family: 'Space Mono', monospace;
+            
             line-height: 1.6;
             padding: 60px 20px;
         }
@@ -58,39 +63,35 @@
         footer a { color: var(--text-color); text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--text-color); transition: color 0.2s, border-color 0.2s; }
         footer a:hover { color: var(--text-muted); border-color: var(--text-muted); }
 
-        /*
-        ---------- GÜNCELLENMİŞ SAĞ ÜST FOTOĞRAF STİLLERİ (Çerçevesiz ve Sabit) ----------
-        */
+        /* ---------- GÜNCELLENMİŞ SAĞ ÜST FOTOĞRAF STİLLERİ ---------- */
         .corner-image-container {
             position: absolute;
             top: 0;
             right: 0;
             width: 150px;
             height: 150px;
-            overflow: hidden; /* Dışına taşanları kes */
-            border-radius: 50%; /* Daire içine maskele */
-            border: none; /* KRİTİK: Beyaz çerçeve tamamen kaldırıldı */
-            background-color: var(--card-bg); /* Şık ve koyu bir arka plan */
-            box-shadow: 0 4px 12px rgba(255,255,255,0.02); /* Çok hafif, süzülen bir ışıltı */
-            z-index: 1000; /* Resmi diğer her şeyin üzerinde tutar */
+            overflow: hidden;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 12px rgba(255,255,255,0.02);
+            z-index: 1000;
         }
 
         .corner-image-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Resmi dairesel maske içine sığdır */
+            object-fit: cover;
             display: block;
         }
 
-        /*
-        ---------- EN ALTTAKİ GIF STİLLERİ (Çerçevesiz ve Ortalanmış) ----------
-        */
+        /* ---------- EN ALTTAKİ GIF STİLLERİ ---------- */
         .bottom-gif {
             display: block;
-            margin: 60px auto 20px auto; /* Üstten ve alttan boşluk bırakıp yatayda ortalar */
-            max-width: 250px; /* Göz animasyonu için ideal boyut */
+            margin: 60px auto 20px auto;
+            max-width: 250px;
             width: 100%;
-            border: none; /* Çerçeve tamamen kaldırıldı */
+            border: none;
             background: transparent;
         }
 
