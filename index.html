@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doğukan Sağlık | Portfolio</title>
-
     <link rel="icon" type="image/png" href="icons/favicon.png">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <style>
@@ -54,16 +52,21 @@
             color: var(--text);
             font-family: 'DM Mono', monospace;
             min-height: 100vh;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.35s ease, color 0.35s ease;
         }
 
-        /* HEADER */
+        /* ── HEADER ── */
         .site-header {
             position: sticky; top: 0; z-index: 100;
             background: var(--header-bg);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
-            transition: background 0.3s ease, border-color 0.3s ease;
+            transition: background 0.35s ease, border-color 0.35s ease;
+            animation: slideDown 0.5s cubic-bezier(0.16,1,0.3,1) both;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to   { transform: translateY(0);     opacity: 1; }
         }
         .header-inner {
             max-width: 900px; margin: 0 auto;
@@ -83,14 +86,24 @@
             box-shadow: 0 0 8px var(--green);
             animation: pulse 2.5s ease-in-out infinite;
         }
-        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+        @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.7)} }
 
-        /* TABS */
+        /* ── TABS with sliding pill ── */
         .tabs {
+            position: relative;
             display: flex; gap: 2px;
             background: var(--surface2);
             border: 1px solid var(--border);
             border-radius: 8px; padding: 3px;
+        }
+        .tab-indicator {
+            position: absolute;
+            top: 3px; height: calc(100% - 6px);
+            background: var(--surface);
+            border: 1px solid rgba(127,255,143,0.15);
+            border-radius: 5px;
+            transition: left 0.3s cubic-bezier(0.34,1.56,0.64,1), width 0.3s cubic-bezier(0.34,1.56,0.64,1);
+            pointer-events: none;
         }
         .tab-btn {
             font-family: 'DM Mono', monospace;
@@ -98,56 +111,70 @@
             background: transparent; border: none;
             padding: 5px 14px; border-radius: 5px;
             cursor: pointer;
-            transition: color 0.2s, background 0.2s;
+            transition: color 0.2s;
             white-space: nowrap; letter-spacing: 0.3px;
+            position: relative; z-index: 1;
         }
         .tab-btn:hover { color: var(--text); }
-        .tab-btn.active {
-            background: var(--surface); color: var(--green);
-            border: 1px solid rgba(127,255,143,0.15);
-        }
+        .tab-btn.active { color: var(--green); }
 
-        /* LANG */
-        .lang-toggle {
+        /* ── LANG / THEME ── */
+        .lang-toggle, .theme-toggle {
             font-family: 'DM Mono', monospace;
-            font-size: 0.72rem; background: transparent;
+            background: transparent;
             border: 1px solid var(--border); color: var(--muted);
-            padding: 5px 10px; border-radius: 6px; cursor: pointer;
-            transition: color 0.2s, border-color 0.2s;
-            white-space: nowrap; letter-spacing: 1px;
-        }
-        .lang-toggle:hover { color: var(--text); border-color: var(--border-hover); }
-
-        /* THEME TOGGLE */
-        .theme-toggle {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.85rem; background: transparent;
-            border: 1px solid var(--border); color: var(--muted);
-            width: 34px; height: 34px; border-radius: 6px; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            transition: color 0.2s, border-color 0.2s, background 0.2s;
+            border-radius: 6px; cursor: pointer;
+            transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.15s;
             flex-shrink: 0;
         }
-        .theme-toggle:hover { color: var(--text); border-color: var(--border-hover); background: var(--surface2); }
+        .lang-toggle { font-size: 0.72rem; padding: 5px 10px; letter-spacing: 1px; }
+        .theme-toggle { font-size: 0.85rem; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; }
+        .lang-toggle:hover, .theme-toggle:hover { color: var(--text); border-color: var(--border-hover); background: var(--surface2); transform: scale(1.05); }
+        .theme-toggle:active { transform: scale(0.92) rotate(30deg); }
 
-        /* MAIN */
+        /* ── MAIN ── */
         .main { max-width: 900px; margin: 0 auto; padding: 56px 24px 80px; }
 
-        /* PANELS */
-        .panel { display: none; animation: fadeIn 0.25s ease; }
+        /* ── PANELS ── */
+        .panel { display: none; }
         .panel.active { display: block; }
-        @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
 
-        /* HERO */
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22,1,0.36,1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal.delay-1 { transition-delay: 0.08s; }
+        .reveal.delay-2 { transition-delay: 0.16s; }
+        .reveal.delay-3 { transition-delay: 0.24s; }
+        .reveal.delay-4 { transition-delay: 0.32s; }
+
+        /* ── HERO ── */
         .hero { margin-bottom: 56px; }
+
         .hero-name {
             font-family: 'Syne', sans-serif;
             font-size: clamp(3rem, 8vw, 5.5rem);
             font-weight: 800; line-height: 0.95;
             letter-spacing: -2px; text-transform: uppercase;
             margin-bottom: 20px; color: var(--text);
+            overflow: hidden;
         }
-        .hero-name span { display: block; color: var(--text); }
+        .hero-name .line {
+            display: block;
+            animation: heroLine 0.75s cubic-bezier(0.16,1,0.3,1) both;
+        }
+        .hero-name .line:nth-child(2) { animation-delay: 0.1s; }
+        @keyframes heroLine {
+            from { transform: translateY(110%); opacity: 0; }
+            to   { transform: translateY(0);    opacity: 1; }
+        }
+
         .cursor {
             display: inline-block; width: 3px; height: 0.85em;
             background: var(--green); margin-left: 4px;
@@ -155,177 +182,176 @@
             animation: blink 1s step-end infinite;
         }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
         .hero-meta {
             display: flex; align-items: center; gap: 20px;
             margin-bottom: 32px; flex-wrap: wrap;
+            animation: fadeUp 0.6s 0.35s cubic-bezier(0.22,1,0.36,1) both;
         }
         .hero-role { font-size: 0.85rem; color: var(--green); letter-spacing: 1px; }
         .hero-sep { color: var(--border-hover); }
         .hero-uni { font-size: 0.85rem; color: var(--muted); }
+
         .hero-bio {
             font-size: 1rem; line-height: 1.75;
-            color: var(--text-dim);
-            max-width: 600px; font-weight: 300;
+            color: var(--text-dim); max-width: 600px; font-weight: 300;
+            animation: fadeUp 0.6s 0.45s cubic-bezier(0.22,1,0.36,1) both;
         }
-        .hero-links { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+
+        .hero-links {
+            display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;
+            animation: fadeUp 0.6s 0.55s cubic-bezier(0.22,1,0.36,1) both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
         .hero-link {
             font-size: 0.78rem; color: var(--muted);
-            text-decoration: none;
-            border: 1px solid var(--border);
+            text-decoration: none; border: 1px solid var(--border);
             padding: 7px 16px; border-radius: 6px;
-            transition: color 0.2s, border-color 0.2s, background 0.2s;
+            transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
             letter-spacing: 0.5px;
         }
-        .hero-link:hover { color: var(--text); border-color: var(--border-hover); background: var(--surface2); }
-        .hero-link.primary {
-            background: var(--green-dim); color: var(--green);
-            border-color: rgba(127,255,143,0.2);
-        }
+        .hero-link:hover { color: var(--text); border-color: var(--border-hover); background: var(--surface2); transform: translateY(-2px); }
+        .hero-link.primary { background: var(--green-dim); color: var(--green); border-color: rgba(127,255,143,0.2); }
         .hero-link.primary:hover { background: rgba(127,255,143,0.14); }
 
-        /* SECTION HEAD */
+        /* ── SECTION HEAD ── */
         .section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
         .section-head h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 0.7rem; font-weight: 800;
+            font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 800;
             text-transform: uppercase; letter-spacing: 2.5px; color: var(--muted);
         }
-        .section-line { flex: 1; height: 1px; background: var(--border); }
+        .section-line { flex: 1; height: 1px; background: var(--border); transform-origin: left; }
+        .section-line.animate { animation: lineGrow 0.6s 0.1s cubic-bezier(0.22,1,0.36,1) both; }
+        @keyframes lineGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
-        /* PROJECT CARDS */
+        /* ── PROJECT CARDS ── */
         .project-grid { display: grid; gap: 16px; }
         .project-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
+            background: var(--surface); border: 1px solid var(--border);
             border-radius: 10px; padding: 28px 28px 24px;
-            transition: border-color 0.25s, background 0.25s;
+            transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
             position: relative; overflow: hidden;
+            transform-style: preserve-3d;
+            will-change: transform;
         }
         .project-card::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(127,255,143,0.2), transparent);
-            opacity: 0; transition: opacity 0.25s;
+            background: linear-gradient(90deg, transparent, var(--green), transparent);
+            opacity: 0; transition: opacity 0.3s;
         }
-        .project-card:hover { border-color: var(--border-hover); background: var(--surface2); }
-        .project-card:hover::before { opacity: 1; }
+        .project-card:hover::before { opacity: 0.3; }
         .project-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
         .project-num { font-size: 0.65rem; color: var(--muted); letter-spacing: 1px; }
         .project-title { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
         .project-desc { font-size: 0.85rem; color: var(--text-dim); line-height: 1.7; font-weight: 300; }
         .project-bullets { margin-top: 12px; list-style: none; }
         .project-bullets li {
-            font-size: 0.8rem; color: var(--text-dimmer);
-            line-height: 1.6; padding: 3px 0; font-weight: 300;
-            padding-left: 14px; position: relative;
+            font-size: 0.8rem; color: var(--text-dimmer); line-height: 1.6;
+            padding: 3px 0 3px 14px; font-weight: 300; position: relative;
         }
         .project-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--muted); font-size: 0.7rem; }
         .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
         .tag {
-            font-size: 0.7rem; color: var(--muted);
-            background: var(--surface2);
-            border: 1px solid var(--border);
-            padding: 3px 10px; border-radius: 4px; letter-spacing: 0.3px;
+            font-size: 0.7rem; color: var(--muted); background: var(--surface2);
+            border: 1px solid var(--border); padding: 3px 10px; border-radius: 4px;
+            letter-spacing: 0.3px;
+            transition: color 0.2s, border-color 0.2s, transform 0.2s;
         }
+        .tag:hover { color: var(--green); border-color: var(--green); transform: translateY(-1px); }
 
-        /* EXPERIENCE */
+        /* ── EXPERIENCE CARDS ── */
         .exp-card {
             background: var(--surface); border: 1px solid var(--border);
             border-radius: 10px; padding: 28px; margin-bottom: 16px;
-            transition: border-color 0.25s;
+            transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
         }
-        .exp-card:hover { border-color: var(--border-hover); }
-        .exp-top {
-            display: flex; justify-content: space-between;
-            align-items: flex-start; margin-bottom: 10px;
-            flex-wrap: wrap; gap: 8px;
-        }
+        .exp-card:hover { border-color: var(--border-hover); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
+        .exp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
         .exp-company { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; }
-        .exp-period {
-            font-size: 0.72rem; color: var(--muted);
-            border: 1px solid var(--border);
-            padding: 3px 10px; border-radius: 20px; letter-spacing: 0.5px;
-        }
+        .exp-period { font-size: 0.72rem; color: var(--muted); border: 1px solid var(--border); padding: 3px 10px; border-radius: 20px; letter-spacing: 0.5px; }
         .exp-dept { font-size: 0.75rem; color: var(--muted); margin-bottom: 4px; }
         .exp-role { font-size: 0.78rem; color: var(--green); letter-spacing: 0.5px; margin-bottom: 14px; }
         .exp-bullets { list-style: none; margin-bottom: 16px; }
         .exp-bullets li {
-            font-size: 0.83rem; color: var(--text-dim);
-            line-height: 1.7; padding: 4px 0 4px 16px;
-            font-weight: 300; position: relative;
+            font-size: 0.83rem; color: var(--text-dim); line-height: 1.7;
+            padding: 4px 0 4px 16px; font-weight: 300; position: relative;
             border-bottom: 1px solid var(--sep-line);
         }
         .exp-bullets li:last-child { border-bottom: none; }
         .exp-bullets li::before { content: '↳'; position: absolute; left: 0; color: var(--muted); font-size: 0.75rem; top: 5px; }
 
-        /* SKILLS */
+        /* ── SKILLS ── */
         .skills-section { margin-top: 40px; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
         .skill-group {
             background: var(--surface); border: 1px solid var(--border);
             border-radius: 10px; padding: 20px;
+            transition: border-color 0.25s, transform 0.25s;
         }
-        .skill-group-title {
-            font-size: 0.68rem; color: var(--green);
-            letter-spacing: 1.5px; text-transform: uppercase;
-            margin-bottom: 14px; font-weight: 500;
-        }
+        .skill-group:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+        .skill-group-title { font-size: 0.68rem; color: var(--green); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; font-weight: 500; }
         .skill-item {
-            font-size: 0.83rem; color: var(--text-dim);
-            padding: 5px 0; border-bottom: 1px solid var(--border);
+            font-size: 0.83rem; color: var(--text-dim); padding: 5px 0;
+            border-bottom: 1px solid var(--border);
             display: flex; align-items: center; gap: 8px; font-weight: 300;
+            transition: color 0.2s, padding-left 0.2s;
         }
         .skill-item:last-child { border-bottom: none; }
-        .skill-item::before { content: '↳'; color: var(--muted); font-size: 0.75rem; }
+        .skill-item::before { content: '↳'; color: var(--muted); font-size: 0.75rem; transition: color 0.2s; }
+        .skill-item:hover { color: var(--text); padding-left: 4px; }
+        .skill-item:hover::before { color: var(--green); }
 
-        /* CERTS */
+        /* ── CERTIFICATES ── */
         a.cert-card {
             display: flex; align-items: center; gap: 20px;
             background: var(--surface); border: 1px solid var(--border);
             border-radius: 10px; padding: 22px 24px; margin-bottom: 12px;
             text-decoration: none; color: inherit;
-            transition: border-color 0.25s, background 0.25s;
+            transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
             cursor: pointer;
         }
-        a.cert-card:hover { border-color: var(--green); background: var(--surface2); }
+        a.cert-card:hover { border-color: var(--green); background: var(--surface2); transform: translateX(4px); box-shadow: -4px 0 0 0 var(--green); }
         a.cert-card:hover .cert-name { color: var(--green); }
         .cert-icon {
             width: 42px; height: 42px; border-radius: 8px;
-            background: var(--green-dim);
-            border: 1px solid rgba(127,255,143,0.15);
+            background: var(--green-dim); border: 1px solid rgba(127,255,143,0.15);
             display: flex; align-items: center; justify-content: center;
             font-size: 1.1rem; flex-shrink: 0;
+            transition: transform 0.25s;
         }
+        a.cert-card:hover .cert-icon { transform: scale(1.1) rotate(-5deg); }
         .cert-body { flex: 1; min-width: 0; }
-        .cert-name {
-            font-family: 'Syne', sans-serif; font-size: 0.95rem;
-            font-weight: 700; margin-bottom: 4px;
-            transition: color 0.2s;
-        }
+        .cert-name { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; transition: color 0.2s; }
         .cert-issuer { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
-        .cert-arrow { font-size: 0.85rem; color: var(--muted); flex-shrink: 0; transition: color 0.2s, transform 0.2s; }
-        a.cert-card:hover .cert-arrow { color: var(--green); transform: translateX(3px); }
-        .cert-note {
-            margin-top: 32px; padding: 20px;
-            border: 1px dashed var(--border); border-radius: 10px; text-align: center;
-        }
+        .cert-arrow { font-size: 0.85rem; color: var(--muted); flex-shrink: 0; transition: color 0.25s, transform 0.25s; }
+        a.cert-card:hover .cert-arrow { color: var(--green); transform: translateX(4px); }
+        .cert-note { margin-top: 32px; padding: 20px; border: 1px dashed var(--border); border-radius: 10px; text-align: center; }
         .cert-note p { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
 
-        /* FOOTER */
+        /* ── FOOTER ── */
         .site-footer { border-top: 1px solid var(--border); margin-top: 80px; }
         .footer-inner {
-            max-width: 900px; margin: 0 auto;
-            padding: 24px; display: flex;
-            justify-content: space-between; align-items: center;
+            max-width: 900px; margin: 0 auto; padding: 24px;
+            display: flex; justify-content: space-between; align-items: center;
             gap: 16px; flex-wrap: wrap;
         }
         .footer-copy { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.3px; }
         .footer-links { display: flex; gap: 20px; }
-        .footer-links a {
-            font-size: 0.72rem; color: var(--muted);
-            text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s;
-        }
-        .footer-links a:hover { color: var(--text); }
+        .footer-links a { font-size: 0.72rem; color: var(--muted); text-decoration: none; letter-spacing: 0.3px; transition: color 0.2s, transform 0.2s; display: inline-block; }
+        .footer-links a:hover { color: var(--text); transform: translateY(-1px); }
 
+        /* ── SHIMMER on cards entering view ── */
+        @keyframes shimmerIn {
+            0%   { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* ── MOBILE ── */
         @media (max-width: 600px) {
             .hero-name { font-size: 3rem; }
             .tabs { overflow-x: auto; }
@@ -344,11 +370,12 @@
             <div class="logo-dot"></div>
             lazypanic.dev
         </div>
-        <nav class="tabs" role="tablist">
-            <button class="tab-btn active" onclick="switchTab('about', this)" data-tr="Hakkımda" data-en="About">Hakkımda</button>
-            <button class="tab-btn" onclick="switchTab('projects', this)" data-tr="Projeler" data-en="Projects">Projeler</button>
-            <button class="tab-btn" onclick="switchTab('experience', this)" data-tr="Deneyim" data-en="Experience">Deneyim</button>
-            <button class="tab-btn" onclick="switchTab('certs', this)" data-tr="Sertifikalar" data-en="Certificates">Sertifikalar</button>
+        <nav class="tabs" role="tablist" id="tabsNav">
+            <div class="tab-indicator" id="tabIndicator"></div>
+            <button class="tab-btn active" onclick="switchTab('about',this)" data-tr="Hakkımda" data-en="About">Hakkımda</button>
+            <button class="tab-btn" onclick="switchTab('projects',this)" data-tr="Projeler" data-en="Projects">Projeler</button>
+            <button class="tab-btn" onclick="switchTab('experience',this)" data-tr="Deneyim" data-en="Experience">Deneyim</button>
+            <button class="tab-btn" onclick="switchTab('certs',this)" data-tr="Sertifikalar" data-en="Certificates">Sertifikalar</button>
         </nav>
         <button class="lang-toggle" onclick="toggleLang()">EN</button>
         <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" title="Tema değiştir">☀️</button>
@@ -357,15 +384,15 @@
 
 <main class="main">
 
+    <!-- HAKKIMDA -->
     <section class="panel active" id="panel-about">
         <div class="hero">
             <h1 class="hero-name">
-                Doğukan<span>Sağlık</span><span class="cursor"></span>
+                <span class="line">Doğukan</span>
+                <span class="line">Sağlık<span class="cursor"></span></span>
             </h1>
             <div class="hero-meta">
-                <span class="hero-role"
-                    data-tr="Bilgisayar Mühendisliği Öğrencisi"
-                    data-en="Computer Engineering Student">Bilgisayar Mühendisliği Öğrencisi</span>
+                <span class="hero-role" data-tr="Bilgisayar Mühendisliği Öğrencisi" data-en="Computer Engineering Student">Bilgisayar Mühendisliği Öğrencisi</span>
                 <span class="hero-sep">—</span>
                 <span class="hero-uni">Ostim Teknik Üniversitesi</span>
             </div>
@@ -377,12 +404,12 @@
             <div class="hero-links">
                 <a class="hero-link primary" href="https://github.com/lazypanic999" target="_blank">GitHub ↗</a>
                 <a class="hero-link" href="https://linkedin.com/in/doğukan-sağlik-4515a5288" target="_blank">LinkedIn ↗</a>
-                <a class="hero-link" href="mailto:dogukansaglik8563@gmail.com"
-                   data-tr="İletişim" data-en="Contact">İletişim</a>
+                <a class="hero-link" href="mailto:dogukansaglik8563@gmail.com" data-tr="İletişim" data-en="Contact">İletişim</a>
             </div>
         </div>
     </section>
 
+    <!-- PROJELER -->
     <section class="panel" id="panel-projects">
         <div class="section-head">
             <h2 data-tr="Projeler & Çalışmalar" data-en="Projects & Work">Projeler & Çalışmalar</h2>
@@ -390,69 +417,52 @@
         </div>
         <div class="project-grid">
 
-            <div class="project-card">
+            <div class="project-card reveal">
                 <div class="project-card-top"><span class="project-num">01</span></div>
                 <div class="project-title">OpsCommand</div>
-                <p class="project-desc"
-                   data-tr="DevOps ekipleri için gerçek zamanlı işbirliği ve doğrudan Kubernetes API yönetimini bir araya getiren full-stack bir platform."
-                   data-en="A full-stack DevOps platform integrating real-time team collaboration with direct Kubernetes API management via WebSockets.">
-                   DevOps ekipleri için gerçek zamanlı işbirliği ve doğrudan Kubernetes API yönetimini bir araya getiren full-stack bir platform.
-                </p>
+                <p class="project-desc" data-tr="DevOps ekipleri için gerçek zamanlı işbirliği ve doğrudan Kubernetes API yönetimini bir araya getiren full-stack bir platform." data-en="A full-stack DevOps platform integrating real-time team collaboration with direct Kubernetes API management via WebSockets.">DevOps ekipleri için gerçek zamanlı işbirliği ve doğrudan Kubernetes API yönetimini bir araya getiren full-stack bir platform.</p>
                 <ul class="project-bullets">
                     <li data-tr="React + Node.js ile geliştirilmiş; WebSocket üzerinden canlı Kubernetes API entegrasyonu." data-en="Built with React + Node.js; live Kubernetes API integration over WebSockets.">React + Node.js ile geliştirilmiş; WebSocket üzerinden canlı Kubernetes API entegrasyonu.</li>
                     <li data-tr="Pod logları, rollout ve scaling işlemlerini chat arayüzünden yönetebilen genişletilebilir OpsBot komut mimarisi." data-en="Extensible OpsBot architecture enabling pod logs, rollouts, and scaling from a chat interface.">Pod logları, rollout ve scaling işlemlerini chat arayüzünden yönetebilen genişletilebilir OpsBot komut mimarisi.</li>
                     <li data-tr="Prometheus + Grafana ile özel PromQL sorguları kullanarak komut gecikmesi, hata oranları ve sistem kaynakları izlendi." data-en="Prometheus + Grafana observability stack with custom PromQL queries for latency, error rates, and resource tracking.">Prometheus + Grafana ile özel PromQL sorguları kullanarak komut gecikmesi, hata oranları ve sistem kaynakları izlendi.</li>
                 </ul>
-                <div class="tags">
-                    <span class="tag">Kubernetes</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">WebSocket</span>
-                </div>
+                <div class="tags"><span class="tag">Kubernetes</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">WebSocket</span></div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card reveal delay-1">
                 <div class="project-card-top"><span class="project-num">02</span></div>
                 <div class="project-title">Cloud-Native 5G Core Deployment</div>
-                <p class="project-desc"
-                   data-tr="Gerçek dünya telekom altyapısını simüle etmek amacıyla Kubernetes üzerinde 5G Core Ağı (Open5GS) ve RAN Simülatörü (UERANSIM) kurulumu."
-                   data-en="Orchestrated a 5G Core Network (Open5GS) and RAN Simulator (UERANSIM) on Kubernetes to simulate real-world telecom infrastructure.">
-                   Gerçek dünya telekom altyapısını simüle etmek amacıyla Kubernetes üzerinde 5G Core Ağı (Open5GS) ve RAN Simülatörü (UERANSIM) kurulumu.
-                </p>
+                <p class="project-desc" data-tr="Gerçek dünya telekom altyapısını simüle etmek amacıyla Kubernetes üzerinde 5G Core Ağı (Open5GS) ve RAN Simülatörü (UERANSIM) kurulumu." data-en="Orchestrated a 5G Core Network (Open5GS) and RAN Simulator (UERANSIM) on Kubernetes to simulate real-world telecom infrastructure.">Gerçek dünya telekom altyapısını simüle etmek amacıyla Kubernetes üzerinde 5G Core Ağı (Open5GS) ve RAN Simülatörü (UERANSIM) kurulumu.</p>
                 <ul class="project-bullets">
                     <li data-tr="Helm v3 ve Multus CNI ile çok bileşenli deployment workflow'ları otomatikleştirildi." data-en="Automated multi-component deployments with Helm v3 and Multus CNI pod networking.">Helm v3 ve Multus CNI ile çok bileşenli deployment workflow'ları otomatikleştirildi.</li>
                     <li data-tr="Kubernetes ClusterIP konfigürasyonları düzenlenerek kritik AMF-gNodeB SCTP bağlantı hataları giderildi." data-en="Resolved critical AMF-to-gNodeB SCTP failures by debugging Kubernetes ClusterIP configs.">Kubernetes ClusterIP konfigürasyonları düzenlenerek kritik AMF-gNodeB SCTP bağlantı hataları giderildi.</li>
                     <li data-tr="uesimtun0 tünel arayüzleri ve ICMP probe ile uçtan uca 5G kullanıcı düzlemi bağlantısı doğrulandı." data-en="Validated end-to-end 5G user plane via uesimtun0 tunneling and ICMP probing.">uesimtun0 tünel arayüzleri ve ICMP probe ile uçtan uca 5G kullanıcı düzlemi bağlantısı doğrulandı.</li>
                 </ul>
-                <div class="tags">
-                    <span class="tag">Open5GS</span><span class="tag">UERANSIM</span><span class="tag">Minikube</span><span class="tag">Helm</span><span class="tag">Multus CNI</span>
-                </div>
+                <div class="tags"><span class="tag">Open5GS</span><span class="tag">UERANSIM</span><span class="tag">Minikube</span><span class="tag">Helm</span><span class="tag">Multus CNI</span></div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card reveal delay-2">
                 <div class="project-card-top"><span class="project-num">03</span></div>
                 <div class="project-title">RTOS ADAS Simulation</div>
-                <p class="project-desc"
-                   data-tr="Otonom sürüş destek sistemleri için geliştirilmiş, Mutex ve Queue mekanizmalarıyla senkronize edilmiş kritik zamanlı işletim sistemi simülasyonu."
-                   data-en="Critical real-time OS simulation for autonomous driving systems with Radar ISR Compute and Log tasks synchronized via Mutex and Queue mechanisms.">
-                   Otonom sürüş destek sistemleri için geliştirilmiş, Mutex ve Queue mekanizmalarıyla senkronize edilmiş kritik zamanlı işletim sistemi simülasyonu.
-                </p>
-                <div class="tags">
-                    <span class="tag">RTOS</span><span class="tag">C/C++</span><span class="tag">Embedded</span><span class="tag">FreeRTOS</span>
-                </div>
+                <p class="project-desc" data-tr="Otonom sürüş destek sistemleri için geliştirilmiş, Mutex ve Queue mekanizmalarıyla senkronize edilmiş kritik zamanlı işletim sistemi simülasyonu." data-en="Critical real-time OS simulation for autonomous driving systems with Radar ISR Compute and Log tasks synchronized via Mutex and Queue mechanisms.">Otonom sürüş destek sistemleri için geliştirilmiş, Mutex ve Queue mekanizmalarıyla senkronize edilmiş kritik zamanlı işletim sistemi simülasyonu.</p>
+                <div class="tags"><span class="tag">RTOS</span><span class="tag">C/C++</span><span class="tag">Embedded</span><span class="tag">FreeRTOS</span></div>
             </div>
 
         </div>
     </section>
 
+    <!-- DENEYİM -->
     <section class="panel" id="panel-experience">
         <div class="section-head">
             <h2 data-tr="Deneyim" data-en="Experience">Deneyim</h2>
             <div class="section-line"></div>
         </div>
 
-        <div class="exp-card">
+        <div class="exp-card reveal">
             <div class="exp-top">
                 <div>
                     <div class="exp-company">BLC Communication & Security</div>
-                    <div class="exp-dept" data-tr="Network & Infrastructure Department" data-en="Network & Infrastructure Department">Network & Infrastructure Department</div>
+                    <div class="exp-dept">Network & Infrastructure Department</div>
                 </div>
                 <span class="exp-period" data-tr="Stajyer · Ocak 2026" data-en="Intern · Jan 2026">Stajyer · Ocak 2026</span>
             </div>
@@ -463,16 +473,14 @@
                 <li data-tr="Development, Testing ve Production ortamlarında Docker container deployment'larını yönettim; %99.3 uptime sağlandı." data-en="Managed Docker container deployments across Dev/Test/Prod environments, contributing to 99.3% uptime.">Development, Testing ve Production ortamlarında Docker container deployment'larını yönettim; %99.3 uptime sağlandı.</li>
                 <li data-tr="Linux (Ubuntu) ortamında IaaS, SaaS, Docker ve Kubernetes gibi modern bulut kavramları üzerine kapsamlı teknik raporlar kaleme aldım." data-en="Authored technical reports on IaaS, SaaS, Docker, and Kubernetes in Linux (Ubuntu) environments.">Linux (Ubuntu) ortamında IaaS, SaaS, Docker ve Kubernetes gibi modern bulut kavramları üzerine kapsamlı teknik raporlar kaleme aldım.</li>
             </ul>
-            <div class="tags">
-                <span class="tag">OpenStack</span><span class="tag">NetBox</span><span class="tag">Docker</span><span class="tag">IPAM</span><span class="tag">Linux</span>
-            </div>
+            <div class="tags"><span class="tag">OpenStack</span><span class="tag">NetBox</span><span class="tag">Docker</span><span class="tag">IPAM</span><span class="tag">Linux</span></div>
         </div>
 
-        <div class="exp-card">
+        <div class="exp-card reveal delay-1">
             <div class="exp-top">
                 <div>
                     <div class="exp-company">Docuart Information Technologies</div>
-                    <div class="exp-dept" data-tr="Software Development Department" data-en="Software Development Department">Software Development Department</div>
+                    <div class="exp-dept">Software Development Department</div>
                 </div>
                 <span class="exp-period" data-tr="Stajyer · Ocak 2025" data-en="Intern · Jan 2025">Stajyer · Ocak 2025</span>
             </div>
@@ -482,12 +490,10 @@
                 <li data-tr="React ile duyarlı frontend arayüzleri oluşturuldu; Node.js ile sağlam backend mimarileri tasarlandı." data-en="Built responsive frontend UIs with React and robust backend architectures with Node.js.">React ile duyarlı frontend arayüzleri oluşturuldu; Node.js ile sağlam backend mimarileri tasarlandı.</li>
                 <li data-tr="MongoDB (NoSQL) ve SQL veritabanlarını entegre ederek veritabanı tasarımı ve yönetimi konusunda deneyim kazanıldı." data-en="Gained hands-on experience integrating both MongoDB (NoSQL) and SQL databases into the application.">MongoDB (NoSQL) ve SQL veritabanlarını entegre ederek veritabanı tasarımı ve yönetimi konusunda deneyim kazanıldı.</li>
             </ul>
-            <div class="tags">
-                <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">SQL</span><span class="tag">OOP</span>
-            </div>
+            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">SQL</span><span class="tag">OOP</span></div>
         </div>
 
-        <div class="skills-section">
+        <div class="skills-section reveal delay-2">
             <div class="section-head" style="margin-top: 32px;">
                 <h2 data-tr="Yetenekler" data-en="Skills">Yetenekler</h2>
                 <div class="section-line"></div>
@@ -527,124 +533,29 @@
         </div>
     </section>
 
+    <!-- SERTİFİKALAR -->
     <section class="panel" id="panel-certs">
         <div class="section-head">
             <h2 data-tr="Sertifikalar" data-en="Certificates">Sertifikalar</h2>
             <div class="section-line"></div>
         </div>
 
-        <a class="cert-card" href="certs/datacamp-introduction-to-python.pdf" target="_blank">
-            <div class="cert-icon">🐍</div>
-            <div class="cert-body">
-                <div class="cert-name">Introduction to Python</div>
-                <div class="cert-issuer">DataCamp</div>
-            </div>
-            <span class="cert-arrow">↗</span>
-        </a>
+        <a class="cert-card reveal" href="certs/datacamp-introduction-to-python.pdf" target="_blank"><div class="cert-icon">🐍</div><div class="cert-body"><div class="cert-name">Introduction to Python</div><div class="cert-issuer">DataCamp</div></div><span class="cert-arrow">↗</span></a>
+        <a class="cert-card reveal delay-1" href="certs/datacamp-intermediate-python.pdf" target="_blank"><div class="cert-icon">🐍</div><div class="cert-body"><div class="cert-name">Intermediate Python</div><div class="cert-issuer">DataCamp</div></div><span class="cert-arrow">↗</span></a>
+        <a class="cert-card reveal delay-2" href="certs/datacamp-software-engineering-principles.pdf" target="_blank"><div class="cert-icon">🏗️</div><div class="cert-body"><div class="cert-name">Software Engineering Principles in Python</div><div class="cert-issuer">DataCamp</div></div><span class="cert-arrow">↗</span></a>
+        <a class="cert-card reveal delay-3" href="certs/datacamp-introduction-to-testing.pdf" target="_blank"><div class="cert-icon">🧪</div><div class="cert-body"><div class="cert-name">Introduction to Testing in Python</div><div class="cert-issuer">DataCamp</div></div><span class="cert-arrow">↗</span></a>
+        <a class="cert-card reveal" href="certs/datacamp-object-oriented-programming.pdf" target="_blank"><div class="cert-icon">🔧</div><div class="cert-body"><div class="cert-name">Introduction to Object-Oriented Programming in Python</div><div class="cert-issuer">DataCamp</div></div><span class="cert-arrow">↗</span></a>
+        <a class="cert-card reveal delay-1" href="certs/datacamp-data-manipulation-pandas.pdf" target="_blank"><div class="cert-icon">🐼</div><div class="cert-body"><div class="cert-name">Data Manipulation with pandas</div><div class="cert-issuer">DataCamp</div></div><span class="cert-arrow">↗</span></a>
+        <a class="cert-card reveal delay-2" href="certs/datacamp-joining-data-pandas.pdf" target="_blank"><div class="cert-icon">🔗</div><div class="cert-body"><div class="cert-name">Joining Data with pandas</div><div class="cert-issuer">DataCamp</div></div><span class="cert-arrow">↗</span></a>
+        <a class="cert-card reveal delay-3" href="certs/datacamp-introduction-to-statistics.pdf" target="_blank"><div class="cert-icon">📊</div><div class="cert-body"><div class="cert-name">Introduction to Statistics in Python</div><div class="cert-issuer">DataCamp</div></div><span class="cert-arrow">↗</span></a>
+        <a class="cert-card reveal" href="certs/datacamp-data-visualization-seaborn.pdf" target="_blank"><div class="cert-icon">📈</div><div class="cert-body"><div class="cert-name">Introduction to Data Visualization with Seaborn</div><div class="cert-issuer">DataCamp</div></div><span class="cert-arrow">↗</span></a>
+        <a class="cert-card reveal delay-1" href="certs/datacamp-exploratory-data-analysis.pdf" target="_blank"><div class="cert-icon">🔍</div><div class="cert-body"><div class="cert-name">Exploratory Data Analysis in Python</div><div class="cert-issuer">DataCamp</div></div><span class="cert-arrow">↗</span></a>
+        <a class="cert-card reveal delay-2" href="certs/datacamp-sampling-in-python.pdf" target="_blank"><div class="cert-icon">🎲</div><div class="cert-body"><div class="cert-name">Sampling in Python</div><div class="cert-issuer">DataCamp</div></div><span class="cert-arrow">↗</span></a>
+        <a class="cert-card reveal delay-3" href="certs/datacamp-hypothesis-testing.pdf" target="_blank"><div class="cert-icon">📉</div><div class="cert-body"><div class="cert-name">Hypothesis Testing in Python</div><div class="cert-issuer">DataCamp</div></div><span class="cert-arrow">↗</span></a>
 
-        <a class="cert-card" href="certs/datacamp-intermediate-python.pdf" target="_blank">
-            <div class="cert-icon">🐍</div>
-            <div class="cert-body">
-                <div class="cert-name">Intermediate Python</div>
-                <div class="cert-issuer">DataCamp</div>
-            </div>
-            <span class="cert-arrow">↗</span>
-        </a>
-
-        <a class="cert-card" href="certs/datacamp-software-engineering-principles.pdf" target="_blank">
-            <div class="cert-icon">🏗️</div>
-            <div class="cert-body">
-                <div class="cert-name">Software Engineering Principles in Python</div>
-                <div class="cert-issuer">DataCamp</div>
-            </div>
-            <span class="cert-arrow">↗</span>
-        </a>
-
-        <a class="cert-card" href="certs/datacamp-introduction-to-testing.pdf" target="_blank">
-            <div class="cert-icon">🧪</div>
-            <div class="cert-body">
-                <div class="cert-name">Introduction to Testing in Python</div>
-                <div class="cert-issuer">DataCamp</div>
-            </div>
-            <span class="cert-arrow">↗</span>
-        </a>
-
-        <a class="cert-card" href="certs/datacamp-object-oriented-programming.pdf" target="_blank">
-            <div class="cert-icon">🔧</div>
-            <div class="cert-body">
-                <div class="cert-name">Introduction to Object-Oriented Programming in Python</div>
-                <div class="cert-issuer">DataCamp</div>
-            </div>
-            <span class="cert-arrow">↗</span>
-        </a>
-
-        <a class="cert-card" href="certs/datacamp-data-manipulation-pandas.pdf" target="_blank">
-            <div class="cert-icon">🐼</div>
-            <div class="cert-body">
-                <div class="cert-name">Data Manipulation with pandas</div>
-                <div class="cert-issuer">DataCamp</div>
-            </div>
-            <span class="cert-arrow">↗</span>
-        </a>
-
-        <a class="cert-card" href="certs/datacamp-joining-data-pandas.pdf" target="_blank">
-            <div class="cert-icon">🔗</div>
-            <div class="cert-body">
-                <div class="cert-name">Joining Data with pandas</div>
-                <div class="cert-issuer">DataCamp</div>
-            </div>
-            <span class="cert-arrow">↗</span>
-        </a>
-
-        <a class="cert-card" href="certs/datacamp-introduction-to-statistics.pdf" target="_blank">
-            <div class="cert-icon">📊</div>
-            <div class="cert-body">
-                <div class="cert-name">Introduction to Statistics in Python</div>
-                <div class="cert-issuer">DataCamp</div>
-            </div>
-            <span class="cert-arrow">↗</span>
-        </a>
-
-        <a class="cert-card" href="certs/datacamp-data-visualization-seaborn.pdf" target="_blank">
-            <div class="cert-icon">📈</div>
-            <div class="cert-body">
-                <div class="cert-name">Introduction to Data Visualization with Seaborn</div>
-                <div class="cert-issuer">DataCamp</div>
-            </div>
-            <span class="cert-arrow">↗</span>
-        </a>
-
-        <a class="cert-card" href="certs/datacamp-exploratory-data-analysis.pdf" target="_blank">
-            <div class="cert-icon">🔍</div>
-            <div class="cert-body">
-                <div class="cert-name">Exploratory Data Analysis in Python</div>
-                <div class="cert-issuer">DataCamp</div>
-            </div>
-            <span class="cert-arrow">↗</span>
-        </a>
-
-        <a class="cert-card" href="certs/datacamp-sampling-in-python.pdf" target="_blank">
-            <div class="cert-icon">🎲</div>
-            <div class="cert-body">
-                <div class="cert-name">Sampling in Python</div>
-                <div class="cert-issuer">DataCamp</div>
-            </div>
-            <span class="cert-arrow">↗</span>
-        </a>
-
-        <a class="cert-card" href="certs/datacamp-hypothesis-testing.pdf" target="_blank">
-            <div class="cert-icon">📉</div>
-            <div class="cert-body">
-                <div class="cert-name">Hypothesis Testing in Python</div>
-                <div class="cert-issuer">DataCamp</div>
-            </div>
-            <span class="cert-arrow">↗</span>
-        </a>
-
-        <div class="cert-note">
-            <p data-tr="PDF dosyalarını siteyle aynı dizindeki 'certs/' klasörüne koyun. Örnek: certs/datacamp-software-engineering-python.pdf"
-               data-en="Place your PDF files in a 'certs/' folder alongside the HTML. Example: certs/datacamp-software-engineering-python.pdf">
-               PDF dosyalarını siteyle aynı dizindeki <code style="color:var(--green);font-size:0.75rem">certs/</code> klasörüne koyun.
+        <div class="cert-note reveal">
+            <p data-tr="PDF dosyalarını siteyle aynı dizindeki 'certs/' klasörüne koyun." data-en="Place your PDF files in a 'certs/' folder alongside the HTML.">
+                PDF dosyalarını siteyle aynı dizindeki <code style="color:var(--green);font-size:0.75rem">certs/</code> klasörüne koyun.
             </p>
         </div>
     </section>
@@ -663,27 +574,19 @@
 </footer>
 
 <script>
-    let lang = 'tr';
+    /* ── THEME ── */
     let theme = localStorage.getItem('theme') || 'dark';
-
     function applyTheme(t) {
         theme = t;
         document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : '');
         document.getElementById('themeBtn').textContent = t === 'light' ? '🌙' : '☀️';
         localStorage.setItem('theme', t);
     }
+    function toggleTheme() { applyTheme(theme === 'dark' ? 'light' : 'dark'); }
+    applyTheme(theme);
 
-    function toggleTheme() {
-        applyTheme(theme === 'dark' ? 'light' : 'dark');
-    }
-
-    function switchTab(id, btn) {
-        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.getElementById('panel-' + id).classList.add('active');
-        btn.classList.add('active');
-    }
-
+    /* ── LANG ── */
+    let lang = 'tr';
     function toggleLang() {
         lang = lang === 'tr' ? 'en' : 'tr';
         document.querySelector('.lang-toggle').textContent = lang === 'tr' ? 'EN' : 'TR';
@@ -694,7 +597,64 @@
         });
     }
 
-    applyTheme(theme);
+    /* ── SLIDING TAB INDICATOR ── */
+    function moveIndicator(btn) {
+        const ind = document.getElementById('tabIndicator');
+        const nav = document.getElementById('tabsNav');
+        const navRect = nav.getBoundingClientRect();
+        const btnRect = btn.getBoundingClientRect();
+        ind.style.left  = (btnRect.left - navRect.left - 3) + 'px';
+        ind.style.width = btnRect.width + 'px';
+    }
+
+    /* ── TABS ── */
+    function switchTab(id, btn) {
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        const panel = document.getElementById('panel-' + id);
+        panel.classList.add('active');
+        btn.classList.add('active');
+        moveIndicator(btn);
+        /* Re-trigger reveal for items in this panel */
+        panel.querySelectorAll('.reveal').forEach(el => {
+            el.classList.remove('visible');
+            void el.offsetWidth; /* force reflow */
+        });
+        setTimeout(() => observeAll(), 20);
+    }
+
+    /* ── SCROLL REVEAL via IntersectionObserver ── */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+    }, { threshold: 0.1 });
+
+    function observeAll() {
+        document.querySelectorAll('.panel.active .reveal').forEach(el => observer.observe(el));
+    }
+
+    /* ── 3D TILT on project cards ── */
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width  - 0.5;
+            const y = (e.clientY - r.top)  / r.height - 0.5;
+            card.style.transform = `perspective(700px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateZ(4px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+
+    /* ── INIT ── */
+    window.addEventListener('load', () => {
+        /* Position indicator on active tab */
+        const activeBtn = document.querySelector('.tab-btn.active');
+        if (activeBtn) moveIndicator(activeBtn);
+        /* Animate section lines */
+        document.querySelectorAll('.section-line').forEach(l => l.classList.add('animate'));
+        /* Start scroll observer */
+        observeAll();
+    });
 </script>
 </body>
 </html>
