@@ -23,15 +23,6 @@
         body {
            /* Temel koyu renk */
             background-color: #050505;
-            
-            /* Üst üste iki katman: 1. Kumlanma (Noise) efekti, 2. Işık yansıması (Radial Gradient) */
-            background-image: 
-                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E"),
-                radial-gradient(circle at -10% 70%, rgba(180, 180, 180, 0.25) 0%, #000000 60%);
-            
-            /* Arka planı sabitler, sayfayı aşağı kaydırırken ışık ve kumlanma sabit kalır */
-            background-attachment: fixed;
-            
             color: var(--text-color);
             font-family: 'Space Mono', monospace;
             line-height: 1.6;
@@ -44,7 +35,7 @@
             margin-bottom: 50px;
             border-bottom: 3px solid var(--text-color);
             padding-bottom: 20px;
-            position: relative; /* Sağ üst fotoğraf için kritik */
+            position: relative;
         }
         h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1.5px; text-transform: uppercase; }
         .subtitle { font-family: 'Fira Code', monospace; font-size: 1.1rem; color: var(--text-muted); font-weight: 500; }
@@ -70,40 +61,7 @@
         footer a { color: var(--text-color); text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--text-color); transition: color 0.2s, border-color 0.2s; }
         footer a:hover { color: var(--text-muted); border-color: var(--text-muted); }
 
-        /* ---------- GÜNCELLENMİŞ SAĞ ÜST FOTOĞRAF STİLLERİ ---------- */
-        .corner-image-container {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 150px;
-            height: 150px;
-            overflow: hidden;
-            border-radius: 50%;
-            border: none;
-            background-color: var(--card-bg);
-            box-shadow: 0 4px 12px rgba(255,255,255,0.02);
-            z-index: 1000;
-        }
-
-        .corner-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* ---------- EN ALTTAKİ GIF STİLLERİ ---------- */
-        .bottom-gif {
-            display: block;
-            margin: 60px auto 20px auto;
-            max-width: 250px;
-            width: 100%;
-            border: none;
-            background: transparent;
-        }
-
         @media (max-width: 600px) {
-            .corner-image-container { position: relative; top: 0; right: 0; margin: 0 auto 30px auto; display: block; width: 150px; height: 150px; }
             body { padding: 40px 20px; }
             footer { flex-direction: column; gap: 15px; }
             h1 { font-size: 2.8rem; }
@@ -114,10 +72,6 @@
 
     <div class="container">
         <header>
-            <div class="corner-image-container">
-                <img src="profil.jpg" alt="Doğukan Sağlık Art">
-            </div>
-
             <h1>Doğukan Sağlık</h1>
             <p class="subtitle">Bilgisayar Mühendisliği Öğrencisi</p>
         </header>
@@ -179,8 +133,6 @@
             </div>
         </section>
     </div>
-
-    <img src="eye.gif" alt="Eye Animation" class="bottom-gif">
 
     <footer>
         <div class="container" style="padding: 0; display: flex; justify-content: space-between; width: 100%; max-width: 850px;">
