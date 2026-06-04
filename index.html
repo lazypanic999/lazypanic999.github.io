@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <style>
+        /* ── KENDİ FONTUNU YÜKLEME ── */
+        @font-face {
+            font-family: 'Dust Mites';
+            src: url('fonts/dust-mites.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         :root {
             --bg: #080808;
             --surface: #0f0f0f;
@@ -74,11 +82,11 @@
             display: flex; align-items: center;
             justify-content: space-between; gap: 20px;
         }
+        
+        /* ── LOGO STYLES ── */
         .logo {
-            font-family: 'Syne', sans-serif;
-            font-size: 1rem; font-weight: 800;
-            letter-spacing: 0.5px; white-space: nowrap;
             display: flex; align-items: center; gap: 8px;
+            white-space: nowrap;
         }
         .logo-dot {
             width: 7px; height: 7px; border-radius: 50%;
@@ -87,6 +95,21 @@
             animation: pulse 2.5s ease-in-out infinite;
         }
         @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.7)} }
+        
+        .logo-lazy {
+            font-family: 'Dust Mites', 'Syne', sans-serif;
+            font-size: 1.3rem; /* Dust Mites biraz küçük görünebilir, boyutu artırıldı */
+            font-weight: normal;
+            letter-spacing: 1px;
+            color: var(--text);
+        }
+        .logo-dev {
+            font-family: 'Syne', sans-serif;
+            font-size: 1rem; 
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: var(--green); /* ".dev" kısmını vurgulamak için yeşil yaptım, istersen var(--text) yapabilirsin */
+        }
 
         /* ── TABS with sliding pill ── */
         .tabs {
@@ -592,7 +615,9 @@
     <div class="header-inner">
         <div class="logo">
             <div class="logo-dot"></div>
-            lazypanic.dev
+            <div>
+                <span class="logo-lazy">lazypanic</span><span class="logo-dev">.dev</span>
+            </div>
         </div>
         <nav class="tabs" role="tablist" id="tabsNav">
             <div class="tab-indicator" id="tabIndicator"></div>
@@ -647,7 +672,7 @@
                 <ul class="project-bullets">
                     <li data-tr="React + Node.js ile geliştirilmiş; WebSocket üzerinden canlı Kubernetes API entegrasyonu." data-en="Built with React + Node.js; live Kubernetes API integration over WebSockets.">React + Node.js ile geliştirilmiş; WebSocket üzerinden canlı Kubernetes API entegrasyonu.</li>
                     <li data-tr="Pod logları, rollout ve scaling işlemlerini chat arayüzünden yönetebilen genişletilebilir OpsBot komut mimarisi." data-en="Extensible OpsBot architecture enabling pod logs, rollouts, and scaling from a chat interface.">Pod logları, rollout ve scaling işlemlerini chat arayüzünden yönetebilen genişletilebilir OpsBot komut mimarisi.</li>
-                    <li data-tr="Prometheus + Grafana ile özel PromQL sorguları kullanarak komut gecikmesi, hata oranları ve sistem kaynakları izlendi." data-en="Prometheus + Grafana observability stack with custom PromQL queries for latency, error rates, and resource tracking.">Prometheus + Grafana ile özel PromQL sorguları kullanarak komut gecikmesi, hata oranları ve sistem kaynakları izlendi.</li>
+                    <li data-tr="Prometheus + Grafana ile özel PromQL sorguları kullanarak komut gecikmesi, hata oranları ve sistem kaynakları izlendi." data-en="Prometheus + Grafana observability stack with custom PromQL queries for latency, error rates, and resource tracking.">Prometheus + Grafana observability stack with custom PromQL queries for latency, error rates, and resource tracking.</li>
                 </ul>
                 <div class="tags"><span class="tag">Kubernetes</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">WebSocket</span></div>
             </div>
