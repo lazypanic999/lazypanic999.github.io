@@ -37,7 +37,25 @@ function applyFilter(filter, announce = true) {
 }
 const savedTheme = readPreference('ds-theme', 'dark');
 document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
-document.getElementById('theme').addEventListener('click', () => { const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'; document.documentElement.dataset.theme = next; savePreference('ds-theme', next); updateThemeLabel(); });
+let themeTransition;
+function applyTheme(next) {
+  document.documentElement.dataset.theme = next;
+  document.querySelector('meta[name="theme-color"]').content = next === 'light' ? '#f5f5f7' : '#080a0d';
+  savePreference('ds-theme', next);
+  updateThemeLabel();
+}
+document.getElementById('theme').addEventListener('click', () => {
+  const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.dataset.motion === 'off';
+  themeTransition?.skipTransition();
+  if (!document.startViewTransition || reduced) { applyTheme(next); return; }
+  const bounds = document.getElementById('theme').getBoundingClientRect();
+  document.documentElement.style.setProperty('--theme-x', `${bounds.left+bounds.width/2}px`);
+  document.documentElement.style.setProperty('--theme-y', `${bounds.top+bounds.height/2}px`);
+  const transition = document.startViewTransition(() => applyTheme(next));
+  themeTransition = transition;
+  transition.finished.catch(() => {}).finally(() => { if (themeTransition === transition) themeTransition = undefined; });
+});
 document.getElementById('lang').addEventListener('click', () => applyLanguage(language === 'tr' ? 'en' : 'tr'));
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => applyFilter(button.dataset.filter)));
 let copyTimer;

@@ -1,0 +1,127 @@
+{
+  "/assets/Dogukan-Saglik-CV.pdf": {
+    "pages": [
+      {
+        "src": "assets/previews/Dogukan-Saglik-CV-1.webp",
+        "width": 1160,
+        "height": 1500
+      },
+      {
+        "src": "assets/previews/Dogukan-Saglik-CV-2.webp",
+        "width": 1160,
+        "height": 1500
+      }
+    ],
+    "sha256": "e0723da146dd026659526c0a51d5ac81930c7bae2c20eb35461656af0930e641"
+  },
+  "/certs/datacamp-data-visualization-seaborn.pdf": {
+    "pages": [
+      {
+        "src": "assets/previews/datacamp-data-visualization-seaborn-1.webp",
+        "width": 1500,
+        "height": 866
+      }
+    ],
+    "sha256": "0040307b2b6c40906e8cc6eb688f754c9d98c5039fdfb6819d767aa605e3aa6e"
+  },
+  "/certs/datacamp-exploratory-data-analysis.pdf": {
+    "pages": [
+      {
+        "src": "assets/previews/datacamp-exploratory-data-analysis-1.webp",
+        "width": 1500,
+        "height": 866
+      }
+    ],
+    "sha256": "6a11eb532bf624b03ce7a9d5f65a84ab7c79a46f85749940711bd225691672f1"
+  },
+  "/certs/datacamp-hypothesis-testing.pdf": {
+    "pages": [
+      {
+        "src": "assets/previews/datacamp-hypothesis-testing-1.webp",
+        "width": 1500,
+        "height": 866
+      }
+    ],
+    "sha256": "af5151243f494dabdfb9d2ac5dc305b26df06960206c1884c5ef2f4713735f14"
+  },
+  "/certs/datacamp-intermediate-python.pdf": {
+    "pages": [
+      {
+        "src": "assets/previews/datacamp-intermediate-python-1.webp",
+        "width": 1500,
+        "height": 866
+      }
+    ],
+    "sha256": "6baf65d04e1664e1568ff4039f8b586cb589c96f8c55de30f7f9609002883790"
+  },
+  "/certs/datacamp-introduction-to-python.pdf": {
+    "pages": [
+      {
+        "src": "assets/previews/datacamp-introduction-to-python-1.webp",
+        "width": 1500,
+        "height": 866
+      }
+    ],
+    "sha256": "971b2dcb958c1e5d20c7cd32eb234a2a03b32fa4f8597b7568d94a053baea5a9"
+  },
+  "/certs/datacamp-introduction-to-statistics.pdf": {
+    "pages": [
+      {
+        "src": "assets/previews/datacamp-introduction-to-statistics-1.webp",
+        "width": 1500,
+        "height": 866
+      }
+    ],
+    "sha256": "c1884432465a258202978f320db18b6a21e0c2369140b5a7b12474a6e7865ca8"
+  },
+  "/certs/datacamp-introduction-to-testing.pdf": {
+    "pages": [
+      {
+        "src": "assets/previews/datacamp-introduction-to-testing-1.webp",
+        "width": 1500,
+        "height": 866
+      }
+    ],
+    "sha256": "022259646497ad06b51384e127201438396a36a69e3561096ace8e0aa8852bfd"
+  },
+  "/certs/datacamp-joining-data-pandas.pdf": {
+    "pages": [
+      {
+        "src": "assets/previews/datacamp-joining-data-pandas-1.webp",
+        "width": 1500,
+        "height": 866
+      }
+    ],
+    "sha256": "ec10e8cd28b2cec92db85288cef91bccb9de521a69a37417bd37060672f8b275"
+  },
+  "/certs/datacamp-object-oriented-programming.pdf": {
+    "pages": [
+      {
+        "src": "assets/previews/datacamp-object-oriented-programming-1.webp",
+        "width": 1500,
+        "height": 866
+      }
+    ],
+    "sha256": "7072fc6cb91cd27c522b0b462a75f00947a1505dc1b0e9880892133558d21e3f"
+  },
+  "/certs/datacamp-sampling-in-python.pdf": {
+    "pages": [
+      {
+        "src": "assets/previews/datacamp-sampling-in-python-1.webp",
+        "width": 1500,
+        "height": 866
+      }
+    ],
+    "sha256": "0a664ae975c0333907fa1d7990baae4486503fc9ac29907f69e8dfcc496d7fd8"
+  },
+  "/certs/datacamp-software-engineering-principles.pdf": {
+    "pages": [
+      {
+        "src": "assets/previews/datacamp-software-engineering-principles-1.webp",
+        "width": 1500,
+        "height": 866
+      }
+    ],
+    "sha256": "5aa74e3dd57dd28c455e5fda6b7a84635e58922e3f773d08502b612e0c58cd53"
+  }
+}

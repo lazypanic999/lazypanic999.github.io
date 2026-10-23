@@ -88,9 +88,6 @@ function scheduleScroll() { if (!scrollFrame) scrollFrame = requestAnimationFram
 window.addEventListener('scroll', scheduleScroll, { passive:true });
 window.addEventListener('resize', scheduleScroll, { passive:true });
 document.getElementById('lang').addEventListener('click', updateMotionLabel);
-document.getElementById('theme').addEventListener('click', () => {
-  document.querySelector('meta[name="theme-color"]').content = document.documentElement.dataset.theme === 'light' ? '#e9f1f3' : '#080f16';
-});
-document.querySelector('meta[name="theme-color"]').content = document.documentElement.dataset.theme === 'light' ? '#e9f1f3' : '#080f16';
+document.querySelector('meta[name="theme-color"]').content = document.documentElement.dataset.theme === 'light' ? '#f5f5f7' : '#080a0d';
 syncMotion();
 updateScroll();

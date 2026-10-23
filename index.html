@@ -11,12 +11,14 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dogukansaglik.com/">
   <link rel="canonical" href="https://dogukansaglik.com/">
-  <meta name="theme-color" content="#080f16">
+  <meta name="theme-color" content="#080a0d">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ds-theme')==='light'?'light':'dark'}catch{}</script>
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="glass.css">
+  <link rel="stylesheet" href="clear.css">
   <script src="app.js" defer></script>
   <script src="motion.js" defer></script>
+  <script src="experience.js" defer></script>
 </head>
 <body>
 <div class="ambient" aria-hidden="true"><div class="light-field field-mint"></div><div class="light-field field-blue"></div><div class="light-field field-violet"></div><div class="ambient-grid"></div></div>
@@ -24,7 +26,7 @@
 <a class="skip" href="#main" data-tr="İçeriğe geç" data-en="Skip to content">İçeriğe geç</a>
 <header class="header">
   <div class="wrap nav-wrap">
-    <a class="brand" href="#" aria-label="Doğukan Sağlık"><span class="wordmark"><span class="logo-dot"></span><span class="logo-lazy">lazypanic</span><span class="logo-dev">.dev</span></span><span class="brand-name">DOĞUKAN SAĞLIK<span>SOFTWARE · CLOUD · SYSTEMS</span></span></a>
+    <a class="brand" href="#" aria-label="Doğukan Sağlık"><span class="brand-name">Doğukan Sağlık</span><span class="wordmark"><span class="logo-lazy">lazypanic</span><span class="logo-dev">.dev</span></span></a>
     <nav aria-label="Ana menü" data-label-tr="Ana menü" data-label-en="Main navigation">
       <a href="#projects" data-tr="Projeler" data-en="Projects">Projeler</a><a href="#experience" data-tr="Deneyim" data-en="Experience">Deneyim</a><a href="#about" data-tr="Hakkımda" data-en="About">Hakkımda</a>
     </nav>
@@ -35,12 +37,15 @@
   <section class="hero wrap">
     <div class="hero-copy">
       <div class="eyebrow"><span class="status-dot"></span><span data-tr="İŞ VE STAJ FIRSATLARINA AÇIK" data-en="OPEN TO JOBS & INTERNSHIPS">İŞ VE STAJ FIRSATLARINA AÇIK</span></div>
-      <h1><span data-tr="Koddan" data-en="From code to">Koddan</span><br><span class="accent" data-tr="çalışan" data-en="working">çalışan</span><br><span data-tr="sistemlere." data-en="systems.">sistemlere.</span><span class="hero-asterisk" aria-hidden="true">✳</span></h1>
+      <p class="identity-role">SOFTWARE · CLOUD · SYSTEMS</p>
+      <h1>Doğukan<br>Sağlık<span class="name-dot">.</span></h1>
+      <p class="hero-statement" data-tr="Koddan çalışan sistemlere." data-en="From code to working systems.">Koddan çalışan sistemlere.</p>
       <p class="intro" data-tr="Ben Doğukan. Yazılım geliştirme ile bulut altyapısı arasında çalışıyorum. Linux sistemleri, Kubernetes laboratuvarları ve full-stack uygulamalar geliştiriyorum." data-en="I'm Doğukan. I work at the intersection of software and cloud infrastructure, building Linux environments, Kubernetes labs and full-stack applications.">Ben Doğukan. Yazılım geliştirme ile bulut altyapısı arasında çalışıyorum. Linux sistemleri, Kubernetes laboratuvarları ve full-stack uygulamalar geliştiriyorum.</p>
       <div class="hero-actions"><a class="button primary" href="#projects"><span data-tr="Projelerimi keşfet" data-en="Explore my work">Projelerimi keşfet</span><span>↗</span></a><a class="download" href="assets/Dogukan-Saglik-CV.pdf" download><span data-tr="CV’mi indir" data-en="Download my CV">CV’mi indir</span><span>↓</span></a></div>
       <div class="hero-note"><span>ANKARA, TÜRKİYE</span><span class="note-line"></span><span data-tr="BİLGİSAYAR MÜHENDİSLİĞİ · 4. SINIF" data-en="COMPUTER ENGINEERING · YEAR 4">BİLGİSAYAR MÜHENDİSLİĞİ · 4. SINIF</span></div>
     </div>
-    <div class="hero-visual">
+    <div class="hero-visual" id="engineering-lab">
+      <div class="lab-skeleton" aria-hidden="true"><span class="skeleton-line short"></span><span class="skeleton-orbit"></span><span class="skeleton-line"></span><span class="skeleton-line"></span><span class="skeleton-line medium"></span></div>
       <div class="visual-top"><span class="mono">01 / ENGINEERING LAB</span><span class="mini-mark">[ lazypanic.dev ]</span></div>
       <div class="orbit" aria-hidden="true"><span class="orbit-label">BUILD. CONNECT. UNDERSTAND.</span><span class="orbit-wordmark"><span class="wordmark"><span class="logo-lazy">lazypanic</span><span class="logo-dev">.dev</span></span></span><span class="orbit-node n1">{ }</span><span class="orbit-node n2">⌘</span><span class="orbit-node n3">&gt;_</span></div>
       <div class="lab-stack"><div><span class="stack-index">01</span><span>APPLICATION</span><span class="stack-tech">React / Node.js</span></div><div><span class="stack-index">02</span><span>ORCHESTRATION</span><span class="stack-tech">Kubernetes / Helm</span></div><div><span class="stack-index">03</span><span>FOUNDATION</span><span class="stack-tech">Linux / Networking</span></div></div>
@@ -75,5 +80,10 @@
   <section id="contact" class="contact-section"><div class="wrap"><div class="contact-top"><p class="section-kicker"><span>04</span> / <span data-tr="BİR SONRAKİ ADIM" data-en="WHAT'S NEXT">BİR SONRAKİ ADIM</span></p><span class="contact-status"><span class="status-dot"></span><span data-tr="Yeni fırsatlara açık" data-en="Open to opportunities">Yeni fırsatlara açık</span></span></div><div class="contact-main"><h2 data-tr="Birlikte bir şeyler\ninşa edelim." data-en="Let's build\nsomething together.">Birlikte bir şeyler<br>inşa edelim.</h2><a class="contact-arrow" href="mailto:dogukansaglik8563@gmail.com" aria-label="E-posta gönder" data-label-tr="E-posta gönder" data-label-en="Send an email">↗</a></div><div class="contact-bottom"><div class="email-row"><a href="mailto:dogukansaglik8563@gmail.com">dogukansaglik8563@gmail.com</a><button id="copy-email" aria-label="E-posta adresini kopyala" data-label-tr="E-posta adresini kopyala" data-label-en="Copy email address">⧉</button><span id="copy-status" role="status"></span></div><div class="socials"><a href="https://github.com/lazypanic999" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/do%C4%9Fukan-sa%C4%9Flik-4515a5288/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="assets/Dogukan-Saglik-CV.pdf" download>CV ↓</a></div></div></div></section>
 </main>
 <footer class="wrap footer"><span>© <span id="year">2026</span> Doğukan Sağlık</span><span class="footer-motto">Stay curious. Keep building.</span><a href="#" data-tr="Başa dön ↑" data-en="Back to top ↑">Başa dön ↑</a></footer>
+<dialog id="document-preview" class="document-dialog" aria-labelledby="document-title">
+  <div class="document-toolbar"><div><span class="document-kicker" data-tr="BELGE ÖNİZLEMESİ" data-en="DOCUMENT PREVIEW">BELGE ÖNİZLEMESİ</span><h2 id="document-title">CV</h2></div><button id="document-close" aria-label="Önizlemeyi kapat" data-label-tr="Önizlemeyi kapat" data-label-en="Close preview">×</button></div>
+  <div class="document-stage" aria-busy="false"><div class="document-skeleton" aria-hidden="true"><div class="skeleton-paper"><span class="skeleton-line short"></span><span class="skeleton-line medium"></span><span class="skeleton-line"></span><span class="skeleton-line"></span><span class="skeleton-line medium"></span><span class="skeleton-gap"></span><span class="skeleton-line short"></span><span class="skeleton-line"></span><span class="skeleton-line"></span><span class="skeleton-line medium"></span></div></div><div id="document-pages" tabindex="0" role="region" aria-label="Belge sayfaları" data-label-tr="Belge sayfaları" data-label-en="Document pages" hidden></div><p id="document-error" hidden></p></div>
+  <div class="document-footer"><p id="document-status" role="status"></p><div><a id="document-open" target="_blank" rel="noopener" data-tr="Yeni sekmede aç ↗" data-en="Open in new tab ↗">Yeni sekmede aç ↗</a><a id="document-download" download data-tr="İndir ↓" data-en="Download ↓">İndir ↓</a></div></div>
+</dialog>
 </body>
 </html>
