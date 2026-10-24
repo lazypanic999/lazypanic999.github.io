@@ -17,7 +17,7 @@ function applyLanguage(next) {
   document.querySelector('meta[property="og:description"]').content = next === 'tr' ? 'Koddan çalışan sistemlere. Projeler, deneyim ve güncel CV.' : 'From code to working systems. Projects, experience and current CV.';
   document.getElementById('copy-status').textContent = '';
   updateThemeLabel();
-  applyFilter(activeFilter, false);
+  applyFilter(activeFilter, Boolean(document.getElementById('filter-status').textContent));
   savePreference('ds-language', next);
 }
 function updateThemeLabel() {
@@ -33,7 +33,7 @@ function applyFilter(filter, announce = true) {
   let count = 0;
   document.querySelectorAll('[data-category]').forEach(project => { project.hidden = filter !== 'all' && !project.dataset.category.split(' ').includes(filter); if (!project.hidden) count++; });
   document.querySelectorAll('[data-filter]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));
-  if (announce) document.getElementById('filter-status').textContent = language === 'tr' ? `${count} proje gösteriliyor.` : `${count} projects shown.`;
+  if (announce) document.getElementById('filter-status').textContent = language === 'tr' ? `${count} proje gösteriliyor.` : `${count} ${count === 1 ? 'project' : 'projects'} shown.`;
 }
 const savedTheme = readPreference('ds-theme', 'dark');
 document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';

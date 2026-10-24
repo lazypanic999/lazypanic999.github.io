@@ -1,0 +1,74 @@
+[
+  {
+    "file": "itinerarium-home.jpeg",
+    "repository": "https://github.com/lazypanic999/Itinerarium",
+    "source": "https://raw.githubusercontent.com/lazypanic999/Itinerarium/refs/heads/main/screenshots/home.jpeg",
+    "sha256": "6eba848eba786b15415b149d07f364856f8e261895f0843e59459c9f9990d564"
+  },
+  {
+    "file": "itinerarium-plan.jpeg",
+    "repository": "https://github.com/lazypanic999/Itinerarium",
+    "source": "https://raw.githubusercontent.com/lazypanic999/Itinerarium/refs/heads/main/screenshots/plan.jpeg",
+    "sha256": "c190db66f3de1629e3656b6a7368c71065dcdc6e37ae1a337c7d88919a6ba1d7"
+  },
+  {
+    "file": "itinerarium-tools.jpeg",
+    "repository": "https://github.com/lazypanic999/Itinerarium",
+    "source": "https://raw.githubusercontent.com/lazypanic999/Itinerarium/refs/heads/main/screenshots/tool.jpeg",
+    "sha256": "e2fb1c8a88d51364b87e80aef76d8ab0e3bd9281d9245c87699cd28a7c644d0d"
+  },
+  {
+    "file": "itinerarium-pastplans.jpeg",
+    "repository": "https://github.com/lazypanic999/Itinerarium",
+    "source": "https://raw.githubusercontent.com/lazypanic999/Itinerarium/refs/heads/main/screenshots/pastplans.jpeg",
+    "sha256": "88865858cabbebdbd4004e8a2bfe004e7ca5d38f632c0dd3a7caf9911577115f"
+  },
+  {
+    "file": "itinerarium-travelogue.jpeg",
+    "repository": "https://github.com/lazypanic999/Itinerarium",
+    "source": "https://raw.githubusercontent.com/lazypanic999/Itinerarium/refs/heads/main/screenshots/travelogue.jpeg",
+    "sha256": "474cbda578db1c04ce0e01bcc29a41df090f498ee967ea63bdf2addf813d1893"
+  },
+  {
+    "file": "opscommand-operations.png",
+    "repository": "https://github.com/lazypanic999/OpsCommand",
+    "source": "https://raw.githubusercontent.com/lazypanic999/OpsCommand/refs/heads/main/assets/operations.png",
+    "sha256": "d9558c1fbc605fa610e2e63c94e0470b8133669ea3139fd727ee598e1d591a4e"
+  },
+  {
+    "file": "opscommand-dashboard.png",
+    "repository": "https://github.com/lazypanic999/OpsCommand",
+    "source": "https://raw.githubusercontent.com/lazypanic999/OpsCommand/refs/heads/main/assets/dashboard.png",
+    "sha256": "1f416ef32afb6737dc7e182aefd65e6093ed93269b7dbdc231091dc85256a17f"
+  },
+  {
+    "file": "wordpress-dashboard.png",
+    "repository": "https://github.com/lazypanic999/two-server-wordpress-lab",
+    "source": "https://raw.githubusercontent.com/lazypanic999/two-server-wordpress-lab/refs/heads/main/docs/screenshots/wordpress-dashboard.png",
+    "sha256": "578fe15e4446a58cf03417349512ec85657bb7ff45507b0e5284661d63a7ed2e"
+  },
+  {
+    "file": "wordpress-ubuntu.png",
+    "repository": "https://github.com/lazypanic999/two-server-wordpress-lab",
+    "source": "https://raw.githubusercontent.com/lazypanic999/two-server-wordpress-lab/refs/heads/main/docs/screenshots/ubuntu-web-server.png",
+    "sha256": "c075e3c30fdfcb6ca358cafca27b07037703b574215b471e5ef17cd6e3915dd7"
+  },
+  {
+    "file": "wordpress-debian.png",
+    "repository": "https://github.com/lazypanic999/two-server-wordpress-lab",
+    "source": "https://raw.githubusercontent.com/lazypanic999/two-server-wordpress-lab/refs/heads/main/docs/screenshots/debian-db-server.png",
+    "sha256": "389cd17fdd8b9e215bb5f0c6a51eaaf422f6168751d220f835f3e3d930714b57"
+  },
+  {
+    "file": "wordpress-database.png",
+    "repository": "https://github.com/lazypanic999/two-server-wordpress-lab",
+    "source": "https://raw.githubusercontent.com/lazypanic999/two-server-wordpress-lab/refs/heads/main/docs/screenshots/remote-database-connection.png",
+    "sha256": "bf4f29b1909a318a0a5f70adc403d85f027f542061a896f07fbee47a0bd991d5"
+  },
+  {
+    "file": "tunnelscope-logo.png",
+    "repository": "https://github.com/lazypanic999/tunnelscope",
+    "source": "https://raw.githubusercontent.com/lazypanic999/tunnelscope/refs/heads/main/tunnelscope-logo.png",
+    "sha256": "d67ac6eb1cd8ec91c1cb327f3ee7ec25389c633e9f011063f23920047c895fd4"
+  }
+]
