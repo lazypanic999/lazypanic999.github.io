@@ -16,7 +16,7 @@
       ['wordpress-dashboard.png','docs/screenshots/wordpress-dashboard.png','İki sunuculu kurulumda çalışan WordPress','WordPress running across two servers'],
       ['wordpress-ubuntu.png','docs/screenshots/ubuntu-web-server.png','Ubuntu web sunucusu ve servis kontrolü','Ubuntu web server and service checks'],
       ['wordpress-debian.png','docs/screenshots/debian-db-server.png','Debian üzerinde MariaDB sunucusu','MariaDB server on Debian'],
-      ['wordpress-database.png','docs/screenshots/remote-database-connection.png','Uzak veritabanı bağlantısının doğrulanması','Verifying the remote database connection']
+      ['wordpress-database.png','docs/screenshots/remote-database-connection.png','Uzak veri tabanı bağlantısının doğrulanması','Verifying the remote database connection']
     ]}
   };
   const localized = (tr,en) => document.documentElement.lang === 'en' ? en : tr;

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" fill="none">
+  <defs>
+    <linearGradient id="facet" x1="160" y1="28" x2="160" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0EAE4"/><stop offset="1" stop-color="#8C9F95"/>
+    </linearGradient>
+    <linearGradient id="coil" x1="89" y1="90" x2="229" y2="233" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DCE8E0"/><stop offset="1" stop-color="#819C8F"/>
+    </linearGradient>
+    <g id="north">
+      <path d="M160 25 181 76 160 106 139 76Z" fill="url(#facet)"/>
+      <path d="M160 25V106L181 76Z" fill="#60766B" fill-opacity=".45"/>
+    </g>
+  </defs>
+  <circle cx="160" cy="160" r="91" stroke="#B5C8BC" stroke-opacity=".08"/>
+  <circle cx="160" cy="160" r="76" stroke="#B5C8BC" stroke-opacity=".15"/>
+  <use href="#north"/><use href="#north" transform="rotate(90 160 160)"/>
+  <use href="#north" transform="rotate(180 160 160)"/><use href="#north" transform="rotate(270 160 160)"/>
+  <path d="M163 159 C163 153 155 152 152 158 C147 167 158 175 167 170 C182 162 177 143 161 139 C138 132 121 156 131 177 C145 206 183 200 197 174 C217 138 189 105 156 105 C111 105 86 150 104 189 C127 239 193 242 225 196 C267 135 219 71 162 70" stroke="url(#coil)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="163" cy="159" r="3" fill="#DCE8E0"/>
+</svg>
