@@ -1,0 +1,14 @@
+{
+  "file": "tunnelscope-logo-blue.png",
+  "source": "User-provided TunnelScope project logo",
+  "sha256": "dd2f1ed74be59ed2fb67c44ce1df8a581672e856f365c1836cc0fcd9a0211dce",
+  "width": 2720,
+  "height": 1680,
+  "visible_bounds": [
+    720,
+    240,
+    2000,
+    1520
+  ],
+  "presentation": "Original PNG preserved byte for byte; CSS frames the transparent margins. No colour filter."
+}

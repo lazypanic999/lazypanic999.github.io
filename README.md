@@ -30,7 +30,7 @@ Document previews use the original PDFs plus 13 rendered page images in `assets/
 
 The portfolio features Itinerarium, OpsCommand, Open5GS + UERANSIM, Two-Server WordPress Lab and the early TunnelScope prototype. Team credits and prototype limitations are stated on the relevant cards. Itinerarium's AI integration is described from its repository, not attributed to the resume.
 
-`projects.js` and `projects.css` provide bilingual screenshot galleries with keyboard navigation, focus restoration, real loading skeletons and error fallbacks. The 11 screenshots are original repository assets served locally without cropping. The original TunnelScope repository logo is retained among the source assets; its card now uses a separately labelled portfolio logo concept. `assets/projects/sources.json` records their public source URLs and SHA-256 hashes. Keep it and both caption translations in sync when changing an image.
+`projects.js` and `projects.css` provide bilingual screenshot galleries with keyboard navigation, focus restoration, real loading skeletons and error fallbacks. The 11 screenshots are original repository assets served locally without cropping. The original TunnelScope repository logo is retained among the source assets; its card now uses the current blue project logo supplied by the user. `assets/projects/sources.json` records their public source URLs and SHA-256 hashes. Keep it and both caption translations in sync when changing an image.
 
 Validated all 11 gallery images, project filters, TR/EN captions, keyboard controls, dark/light themes, 320/390 px layouts and local asset integrity.
 
@@ -39,4 +39,7 @@ Validated all 11 gallery images, project filters, TR/EN captions, keyboard contr
 
 Applied Turkish/English editorial feedback to the engineering motto, screenshot labels, source captions, rebuildable 5G lab description, database terminology and early-stage prototype wording. Technical product names are preserved. The English 5G introduction is complete and matches the clarified Turkish description.
 
-`assets/projects/tunnelscope-mark.svg` is a vector compass-and-spiral logo concept developed from the supplied editorial sketch. It is explicitly labelled as a concept rather than the original repository logo. Private review documents and working notes are not published. The existing source-asset manifest continues to describe original GitHub assets only.
+`assets/projects/tunnelscope-mark.svg` is a vector compass-and-spiral logo concept developed from the supplied editorial sketch. This earlier concept has been superseded in the project card by the user-provided blue project logo. Private review documents and working notes are not published. The existing source-asset manifest continues to describe original GitHub assets only.
+
+
+The current TunnelScope card uses `assets/projects/tunnelscope-logo-blue.png`, preserved byte for byte from the user-provided file. CSS frames its transparent margins while retaining its original colours in both themes. `assets/projects/brand-assets.json` records provenance, dimensions and SHA-256. The card caption and image alt text identify it as the project logo in both languages.
