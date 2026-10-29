@@ -28,9 +28,9 @@ Document previews use the original PDFs plus 13 rendered page images in `assets/
 
 ## Selected projects and screenshots
 
-The portfolio features Itinerarium, OpsCommand, Open5GS + UERANSIM, Two-Server WordPress Lab and the early TunnelScope prototype. Team credits and prototype limitations are stated on the relevant cards. Itinerarium's AI integration is described from its repository, not attributed to the resume.
+The portfolio features TunnelScope, CorePulse, Itinerarium, OpsCommand, Open5GS + UERANSIM and Two-Server WordPress Lab. Team credits and prototype limitations are stated on the relevant cards. Itinerarium's AI integration is described from its repository, not attributed to the resume.
 
-`projects.js` and `projects.css` provide bilingual screenshot galleries with keyboard navigation, focus restoration, real loading skeletons and error fallbacks. The 11 screenshots are original repository assets served locally without cropping. The original TunnelScope repository logo is retained among the source assets; its card now uses the current blue project logo supplied by the user. `assets/projects/sources.json` records their public source URLs and SHA-256 hashes. Keep it and both caption translations in sync when changing an image.
+`projects.js` and `projects.css` provide bilingual screenshot galleries with keyboard navigation, focus restoration, real loading skeletons and error fallbacks. The galleries contain 13 original repository images, including screenshots and a labelled validation summary, served locally without cropping. The original TunnelScope repository logo is retained among the source assets; its card now uses the current blue project logo supplied by the user. `assets/projects/sources.json` records their public source URLs and SHA-256 hashes. Keep it and both caption translations in sync when changing an image.
 
 Validated all 11 gallery images, project filters, TR/EN captions, keyboard controls, dark/light themes, 320/390 px layouts and local asset integrity.
 
@@ -43,3 +43,12 @@ Applied Turkish/English editorial feedback to the engineering motto, screenshot 
 
 
 The current TunnelScope card uses `assets/projects/tunnelscope-logo-blue.png`, preserved byte for byte from the user-provided file. CSS frames its transparent margins while retaining its original colours in both themes. `assets/projects/brand-assets.json` records provenance, dimensions and SHA-256. The card caption and image alt text identify it as the project logo in both languages.
+
+
+## GitHub refresh on 29 October 2026
+
+TunnelScope now reflects the verified v0.4.1 alpha release on GitHub and PyPI: IPv4/IPv6 UDP probes, bounded sweeps, receiver correlation, separately measured directions and offline HTML reports. Its new two-image gallery shows the repository's report UI and controlled two-VM validation summary. The 24/24 observation is limited to that Ubuntu–Debian lab and does not establish an exact path MTU or automatic root-cause diagnosis. The blue project logo is preserved.
+
+CorePulse is presented as early Go development with read-only discovery and a guarded pod-failure workflow in code. Live-cluster validation is pending; telemetry collection, a trained ML model and the dashboard remain planned. The original repository logos adapt to the site's theme.
+
+There are now 6 projects and 13 images across 4 galleries. `assets/projects/sources.json` records 16 original repository assets; `project-sources.json` records source-document blob SHAs. Other existing project repositories had no changes in this review.

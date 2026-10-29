@@ -1,6 +1,10 @@
 'use strict';
 (() => {
   const albums = {
+    tunnelscope: {title:'TunnelScope · v0.4.1 alpha', repo:'tunnelscope', images:[
+      ['tunnelscope-report-ui.png','docs/images/report-ui.png','Çevrimdışı HTML raporu — depodaki örnek rapor görünümü','Offline HTML report — example report view from the repository'],
+      ['tunnelscope-two-vm-results.png','docs/images/two-vm-results.png','Ubuntu ↔ Debian — kontrollü iki VM doğrulaması','Ubuntu ↔ Debian — controlled two-VM validation']
+    ]},
     itinerarium: {title:'Itinerarium', repo:'Itinerarium', images:[
       ['itinerarium-plan.jpeg','screenshots/plan.jpeg','Gün gün seyahat planı','Day-by-day trip planner'],
       ['itinerarium-home.jpeg','screenshots/home.jpeg','Uygulamanın karşılama ekranı','Application welcome screen'],

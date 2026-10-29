@@ -70,5 +70,43 @@
     "repository": "https://github.com/lazypanic999/tunnelscope",
     "source": "https://raw.githubusercontent.com/lazypanic999/tunnelscope/refs/heads/main/tunnelscope-logo.png",
     "sha256": "d67ac6eb1cd8ec91c1cb327f3ee7ec25389c633e9f011063f23920047c895fd4"
+  },
+  {
+    "file": "tunnelscope-report-ui.png",
+    "repository": "https://github.com/lazypanic999/tunnelscope",
+    "source": "https://raw.githubusercontent.com/lazypanic999/tunnelscope/main/docs/images/report-ui.png",
+    "git_blob_sha": "acde9c20292afd118f71a1f0ebf3ffd23231f9bb",
+    "sha256": "ea47ddf3a02dbe26147f0794836491d0f341e5a934fec89799e9cbe7a7323f70",
+    "size": [
+      1280,
+      900
+    ]
+  },
+  {
+    "file": "tunnelscope-two-vm-results.png",
+    "repository": "https://github.com/lazypanic999/tunnelscope",
+    "source": "https://raw.githubusercontent.com/lazypanic999/tunnelscope/main/docs/images/two-vm-results.png",
+    "git_blob_sha": "ff34836d37812dd4034d6ec017fe4fc5452ef09e",
+    "sha256": "0b461700220fb2a434c41ae041323227b8166cb96c4a48a89050b3f43adb8dad",
+    "size": [
+      1600,
+      900
+    ]
+  },
+  {
+    "file": "corepulse-logo.svg",
+    "repository": "https://github.com/lazypanic999/CorePulse",
+    "source": "https://raw.githubusercontent.com/lazypanic999/CorePulse/main/assets/corepulse-logo.svg",
+    "git_blob_sha": "5246021c1966bb98c23b281b5159aa34692eee2f",
+    "sha256": "3eb0698ae12f1d9b3e0efade04b58cfec305bddc3663cf018214df3e7509c908",
+    "size": null
+  },
+  {
+    "file": "corepulse-logo-dark.svg",
+    "repository": "https://github.com/lazypanic999/CorePulse",
+    "source": "https://raw.githubusercontent.com/lazypanic999/CorePulse/main/assets/corepulse-logo-dark.svg",
+    "git_blob_sha": "d2d8b5bed9dd3140858c4ce2add327c16adb7008",
+    "sha256": "69ceb583200880b5056d822b8a1804f9f1436b88a3e5b3eddb7dcc233b145772",
+    "size": null
   }
 ]

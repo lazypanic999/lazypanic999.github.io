@@ -1,0 +1,49 @@
+{
+  "reviewed_on": "2026-10-29",
+  "projects": [
+    {
+      "repository": "https://github.com/lazypanic999/tunnelscope",
+      "git_tree_sha": "7dee8a95f0cbb5afd83589dbd1ba10069c7aedc1",
+      "evidence": [
+        {
+          "url": "https://github.com/lazypanic999/tunnelscope/blob/main/README.md",
+          "git_blob_sha": "c4e5f9396f3d95c4cd7a4f99b3e3a4aaab1c8ee8"
+        },
+        {
+          "url": "https://github.com/lazypanic999/tunnelscope/blob/main/docs/releases/v0.4.1.md",
+          "git_blob_sha": "a101c57aca9f154103fdea8470b3d1268b7a5eaf"
+        },
+        {
+          "url": "https://github.com/lazypanic999/tunnelscope/blob/main/docs/validation/two-vm-field-test.md",
+          "git_blob_sha": "96207225a7f4620d5738acff93ddba2d4e1a5446"
+        },
+        {
+          "url": "https://github.com/lazypanic999/tunnelscope/blob/main/docs/report-ui.md",
+          "git_blob_sha": "8ac64daf343cb562df31ff7bd4c3ebd0d974bf70"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/lazypanic999/CorePulse",
+      "git_tree_sha": "00412cd0bafbfbac0c1ae119f8f3daf2609402d5",
+      "evidence": [
+        {
+          "url": "https://github.com/lazypanic999/CorePulse/blob/main/README.md",
+          "git_blob_sha": "52b6ede72360cdd43da02d297cefe1f9a77f56bb"
+        },
+        {
+          "url": "https://github.com/lazypanic999/CorePulse/blob/main/docs/lab-integration.md",
+          "git_blob_sha": "1390b3d312c6b3bffe343f6990a67c894e616b8f"
+        },
+        {
+          "url": "https://github.com/lazypanic999/CorePulse/blob/main/internal/corepulse/discovery.go",
+          "git_blob_sha": "f28fb4fc69ef3b68209a95be557e225651f9435b"
+        },
+        {
+          "url": "https://github.com/lazypanic999/CorePulse/blob/main/internal/corepulse/faults.go",
+          "git_blob_sha": "00c94f87280c80ce88c39fae38293463c2560d62"
+        }
+      ]
+    }
+  ]
+}
