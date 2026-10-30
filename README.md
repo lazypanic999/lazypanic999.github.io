@@ -52,3 +52,10 @@ TunnelScope now reflects the verified v0.4.1 alpha release on GitHub and PyPI: I
 CorePulse is presented as early Go development with read-only discovery and a guarded pod-failure workflow in code. Live-cluster validation is pending; telemetry collection, a trained ML model and the dashboard remain planned. The original repository logos adapt to the site's theme.
 
 There are now 6 projects and 13 images across 4 galleries. `assets/projects/sources.json` records 16 original repository assets; `project-sources.json` records source-document blob SHAs. Other existing project repositories had no changes in this review.
+
+
+## Studio design — 31 October 2026
+
+`studio.css` adds the midnight/electric-blue/cantaloupe dark palette and white/sky-blue/hot-pink light palette. The personal workspace dashboard links to actual projects and provides toolkit and approach tabs; it contains no simulated telemetry. `studio.js` implements tab selection with Arrow, Home and End keyboard support. The responsive two-column project grid collapses on small screens. Existing content, bilingual labels, document/gallery dialogs and motion preferences remain available. Versioned stylesheet/script URLs prevent stale project styling after publication.
+
+Static asset integrity, HTML structure and JavaScript syntax were checked. Browser visual QA was unavailable because the Windows browser tool could not verify its current URL; responsive layouts and visual appearance still need a browser review.
