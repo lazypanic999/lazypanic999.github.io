@@ -59,3 +59,8 @@ There are now 6 projects and 13 images across 4 galleries. `assets/projects/sour
 `studio.css` adds the midnight/electric-blue/cantaloupe dark palette and white/sky-blue/hot-pink light palette. The personal workspace dashboard links to actual projects and provides toolkit and approach tabs; it contains no simulated telemetry. `studio.js` implements tab selection with Arrow, Home and End keyboard support. The responsive two-column project grid collapses on small screens. Existing content, bilingual labels, document/gallery dialogs and motion preferences remain available. Versioned stylesheet/script URLs prevent stale project styling after publication.
 
 Static asset integrity, HTML structure and JavaScript syntax were checked. Browser visual QA was unavailable because the Windows browser tool could not verify its current URL; responsive layouts and visual appearance still need a browser review.
+
+
+## Signal refinement — 31 October 2026
+
+Replaced the workspace dashboard and signature with a CSS orbital sculpture around the original wordmark. Orbital trails, particles, floating labels and entry/reveal motion obey the animation toggle and reduced-motion preference; off-screen sculpture animation pauses. Dark mode uses warm near-black with restrained blue, while light mode has stronger pink/sky-blue tinted surfaces. TunnelScope and CorePulse are featured; four supporting projects use native expandable details with their original galleries, attribution and technical notes retained. Browser visual QA remains unavailable due the existing browser tool URL-verification limitation.

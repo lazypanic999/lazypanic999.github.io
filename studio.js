@@ -1,27 +1,10 @@
 'use strict';
-// Dashboard panels are local navigation; no simulated telemetry or network calls.
+// Keep the decorative sculpture still off screen; global motion controls remain authoritative.
 (() => {
-  const tabs = [...document.querySelectorAll('.studio-tabs [role="tab"]')];
-  function selectTab(tab, focus = false) {
-    tabs.forEach(item => {
-      const selected = item === tab;
-      item.setAttribute('aria-selected', String(selected));
-      item.tabIndex = selected ? 0 : -1;
-      document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
-    });
-    if (focus) tab.focus();
-  }
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => selectTab(tab));
-    tab.addEventListener('keydown', event => {
-      let next;
-      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-      if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
-      if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = tabs.length - 1;
-      if (next === undefined) return;
-      event.preventDefault();
-      selectTab(tabs[next], true);
-    });
-  });
+  const scene = document.querySelector('.signal-scene');
+  if (!scene || !('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { scene.dataset.idle = String(!entry.isIntersecting); });
+  }, { rootMargin: '80px', threshold: 0 });
+  observer.observe(scene);
 })();
