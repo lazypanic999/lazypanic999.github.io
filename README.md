@@ -72,3 +72,5 @@ Dark: midnight black #07070a, primary electric blue #0097de, secondary cantaloup
 
 
 Electric-blue background lighting: layered #0097de radial shadows now fill both theme backdrops, with stronger dark-theme and softer white-theme opacity. Existing content, accent roles and motion controls are unchanged.
+
+Light-theme lighting also includes subtle hot-pink #de3695 shadows beside the blue lighting, preserving the white base.
