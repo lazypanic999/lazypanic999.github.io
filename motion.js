@@ -34,6 +34,7 @@ function syncMotion() {
   revealObserver?.disconnect();
   document.querySelectorAll('.reveal-pending').forEach(element => element.classList.remove('reveal-pending'));
   if (!enabled) { clearTilt(); return; }
+  if (document.documentElement.dataset.liquidGlass === 'on') return;
   if (!('IntersectionObserver' in window)) return;
   revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {

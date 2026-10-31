@@ -74,3 +74,10 @@ Dark: midnight black #07070a, primary electric blue #0097de, secondary cantaloup
 Electric-blue background lighting: layered #0097de radial shadows now fill both theme backdrops, with stronger dark-theme and softer white-theme opacity. Existing content, accent roles and motion controls are unchanged.
 
 Light-theme lighting also includes subtle hot-pink #de3695 shadows beside the blue lighting, preserving the white base.
+
+
+## Uploaded liquid-glass integration — 31 October 2026
+
+`liquid-glass.js` adapts the user-provided JavaScript (original SHA-256 `14c32f331c0c80dd4cce120c9ee73fee1e3e540fb3674560e0d5601ffeb76763`). It adds glass rims, ambient blobs, pointer spotlights, restrained card tilt, button glints, staggered hero/reveal effects, word-level heading entrances and Chromium backdrop refraction. Existing colours and compact typography are retained; card selection uses explicit portfolio selectors rather than layout heuristics. Existing motion controls govern the new layer. The original progress element is reused. Translated headings are rebuilt with accurate accessible labels. Existing reveal animation yields to this layer. No new external font or runtime library is loaded.
+
+Validation: JavaScript syntax, asset integrity and DOM integration with normal/reduced motion; filters, TR/EN heading labels, pause/reset behaviour, compact project count, single background/progress and repeat initialization. DOM tests ran outside the shipped checkout. This does not replace visual browser QA, which remains unavailable due the browser URL-verification limitation.
