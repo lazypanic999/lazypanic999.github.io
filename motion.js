@@ -88,6 +88,6 @@ function scheduleScroll() { if (!scrollFrame) scrollFrame = requestAnimationFram
 window.addEventListener('scroll', scheduleScroll, { passive:true });
 window.addEventListener('resize', scheduleScroll, { passive:true });
 document.getElementById('lang').addEventListener('click', updateMotionLabel);
-document.querySelector('meta[name="theme-color"]').content = document.documentElement.dataset.theme === 'light' ? '#e7dcec' : '#0a090a';
+document.querySelector('meta[name="theme-color"]').content = document.documentElement.dataset.theme === 'light' ? '#fcfcff' : '#07070a';
 syncMotion();
 updateScroll();

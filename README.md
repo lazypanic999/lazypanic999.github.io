@@ -64,3 +64,8 @@ Static asset integrity, HTML structure and JavaScript syntax were checked. Brows
 ## Signal refinement — 31 October 2026
 
 Replaced the workspace dashboard and signature with a CSS orbital sculpture around the original wordmark. Orbital trails, particles, floating labels and entry/reveal motion obey the animation toggle and reduced-motion preference; off-screen sculpture animation pauses. Dark mode uses warm near-black with restrained blue, while light mode has stronger pink/sky-blue tinted surfaces. TunnelScope and CorePulse are featured; four supporting projects use native expandable details with their original galleries, attribution and technical notes retained. Browser visual QA remains unavailable due the existing browser tool URL-verification limitation.
+
+
+## Palette correction — 31 October 2026
+
+Dark: midnight black #07070a, primary electric blue #0097de, secondary cantaloupe orange #fc734d. Light: white #fcfcff, primary sky blue #008cb8, secondary hot pink #de3695. Primary buttons, logo suffix, active filters, project labels and orbital trails use blue; warm colours are reserved for smaller details. Removed the pink wash from the light background. No layout or content changes. Browser visual QA remains unavailable; source palette and live asset checks verify this correction.

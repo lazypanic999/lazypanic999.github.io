@@ -40,7 +40,7 @@ document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dar
 let themeTransition;
 function applyTheme(next) {
   document.documentElement.dataset.theme = next;
-  document.querySelector('meta[name="theme-color"]').content = next === 'light' ? '#e7dcec' : '#0a090a';
+  document.querySelector('meta[name="theme-color"]').content = next === 'light' ? '#fcfcff' : '#07070a';
   savePreference('ds-theme', next);
   updateThemeLabel();
 }
