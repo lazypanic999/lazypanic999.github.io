@@ -18,3 +18,8 @@ html[data-motion=on] .signal-orbit>i,html[data-motion=on] .signal-orbit>b{animat
 @media(prefers-reduced-motion:reduce){.signal-scene,.signal-scene *,.hero-copy,.compact-body{animation:none!important;transition:none!important}.signal-scene{transform:none!important}.project:hover{translate:none}.project-shot img{transform:none!important}}
 html[data-motion=off] .signal-scene,html[data-motion=off] .signal-scene *,html[data-motion=off] .hero-copy,html[data-motion=off] .compact-body{animation:none!important}html[data-motion=off] .signal-scene{transform:none}html[data-motion=off] .project-shot img{transition:none;transform:none}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.signal-center,.project,.certifications,.skills>div{background:#11141a}:root[data-theme=light] .signal-center,:root[data-theme=light] .project,:root[data-theme=light] .certifications,:root[data-theme=light] .skills>div{background:#f6f8fc}}
+
+/* Readable primary action in the light theme, including the injected glass layer. */
+:root[data-theme=light] .hero-actions .button.primary{background:#00789e!important;border-color:#00789e!important;color:#fff!important;-webkit-text-fill-color:#fff}
+:root[data-theme=light] .hero-actions .button.primary span{color:#fff!important;-webkit-text-fill-color:#fff}
+:root[data-theme=light] .hero-actions .button.primary:hover{background:#006b8e!important;border-color:#006b8e!important}
