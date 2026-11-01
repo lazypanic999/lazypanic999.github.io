@@ -83,3 +83,8 @@ Light-theme lighting also includes subtle hot-pink #de3695 shadows beside the bl
 Validation: JavaScript syntax, asset integrity and DOM integration with normal/reduced motion; filters, TR/EN heading labels, pause/reset behaviour, compact project count, single background/progress and repeat initialization. DOM tests ran outside the shipped checkout. This does not replace visual browser QA, which remains unavailable due the browser URL-verification limitation.
 
 Light-theme primary action uses explicit white text on #00789e blue, including its child labels and injected liquid-glass styling; hover uses #006b8e.
+
+
+## Contact action — 1 November 2026
+
+The final arrow now opens an accessible native contact dialog rather than relying solely on a configured mailto handler. It offers Gmail compose, the default email app and a clipboard action with success/failure feedback. Native dialog dismissal and focus restoration are retained; the original mailto href remains as a no-JavaScript/unsupported-dialog fallback. Both languages are synchronized. DOM integration checks cover opening/closing, copy feedback, translated content, fallback and the existing glass/motion layer. No email is sent automatically.
