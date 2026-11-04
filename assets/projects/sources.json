@@ -108,5 +108,17 @@
     "git_blob_sha": "d2d8b5bed9dd3140858c4ce2add327c16adb7008",
     "sha256": "69ceb583200880b5056d822b8a1804f9f1436b88a3e5b3eddb7dcc233b145772",
     "size": null
+  },
+  {
+    "file": "corepulse-dashboard-desktop.png",
+    "repository": "https://github.com/lazypanic999/CorePulse",
+    "source": "https://raw.githubusercontent.com/lazypanic999/CorePulse/main/assets/dashboard-glass-desktop.png",
+    "sha256": "b6ee6cc5a8a9a502a918fa24f142a3d50f1398deced4a4a708289119f969a273"
+  },
+  {
+    "file": "corepulse-dashboard-mobile.png",
+    "repository": "https://github.com/lazypanic999/CorePulse",
+    "source": "https://raw.githubusercontent.com/lazypanic999/CorePulse/main/assets/dashboard-glass-mobile-full.png",
+    "sha256": "d24430db89357d2cf09d4b4226175b0309f41673da27c5817371bd890c4aa07a"
   }
 ]

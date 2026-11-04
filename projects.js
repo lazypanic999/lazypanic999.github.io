@@ -1,9 +1,13 @@
 'use strict';
 (() => {
   const albums = {
-    tunnelscope: {title:'TunnelScope · v0.4.1 alpha', repo:'tunnelscope', images:[
+    tunnelscope: {title:'TunnelScope · v0.6.0 alpha', repo:'tunnelscope', images:[
       ['tunnelscope-report-ui.png','docs/images/report-ui.png','Çevrimdışı HTML raporu — depodaki örnek rapor görünümü','Offline HTML report — example report view from the repository'],
-      ['tunnelscope-two-vm-results.png','docs/images/two-vm-results.png','Ubuntu ↔ Debian — kontrollü iki VM doğrulaması','Ubuntu ↔ Debian — controlled two-VM validation']
+      ['tunnelscope-two-vm-results.png','docs/images/two-vm-results.png','Ubuntu ↔ Debian — önceki iki VM doğrulama özeti','Ubuntu ↔ Debian — earlier two-VM validation summary']
+    ]},
+    corepulse: {title:'CorePulse · Go dashboard', repo:'CorePulse', images:[
+      ['corepulse-dashboard-desktop.png','assets/dashboard-glass-desktop.png','Canlı laboratuvar — kaynak metrikleri ve deney kaydı (31 Ekim 2026)','Live lab — resource metrics and experiment record (31 October 2026)'],
+      ['corepulse-dashboard-mobile.png','assets/dashboard-glass-mobile-full.png','Dar ekran görünümü — gerçek kaynak metrikleri; model tahmini içermez','Narrow layout — real resource metrics; no model predictions']
     ]},
     itinerarium: {title:'Itinerarium', repo:'Itinerarium', images:[
       ['itinerarium-plan.jpeg','screenshots/plan.jpeg','Gün gün seyahat planı','Day-by-day trip planner'],

@@ -88,3 +88,16 @@ Light-theme primary action uses explicit white text on #00789e blue, including i
 ## Contact action — 1 November 2026
 
 The final arrow now opens an accessible native contact dialog rather than relying solely on a configured mailto handler. It offers Gmail compose, the default email app and a clipboard action with success/failure feedback. Native dialog dismissal and focus restoration are retained; the original mailto href remains as a no-JavaScript/unsupported-dialog fallback. Both languages are synchronized. DOM integration checks cover opening/closing, copy feedback, translated content, fallback and the existing glass/motion layer. No email is sent automatically.
+
+
+## GitHub review — 4 November 2026
+
+Reviewed all public original project repositories and the attributed OpsCommand fork against the 29 October snapshot. TunnelScope now reflects verified GitHub/PyPI v0.6.0 alpha: bounded diagnose/search, ICMP observations, repeated measurements, fragmentation comparison and documented WireGuard/Calico validation. Exact PMTU and automatic root-cause claims remain excluded.
+
+CorePulse now reflects the current Go CLI, real Kubernetes resource telemetry, local dashboard, verified-run CSV workflow and separate UE-to-UPF checks. Trained models, predictions and protocol KPIs remain future work. Added two original dashboard captures from 31 October; older TunnelScope validation art is labelled as an earlier summary.
+
+Added Doguboxd (TMDB, diary, Letterboxd import and Android WebView; device-local storage and pending device/store validation) and Huawei Band Widget (Tkinter display using third-party Huawei HR Overlay; no direct Bluetooth stack). They remain compact alongside the four established supporting projects. Doguboxd hosting returned access restrictions during review, so no public-demo link is promoted.
+
+There are 8 projects, 15 images across 5 galleries and 18 original repository assets. Source URLs and blob/file hashes are in the asset manifests. Preserved the existing palette, liquid-glass effects, contact dialog, original wordmark, team credits and six compact project accordions. Fixed screenshot grid tracks so full images fit their preview boxes.
+
+Validation: source asset integrity, HTML structure/IDs/translations, JavaScript syntax, browser TR/EN and dark/light checks, CorePulse gallery images/keyboard close, 320/390 px overflow checks and project filters (cloud 5, software 6, AI 1, all 8). Browser console had no errors.

@@ -1,47 +1,139 @@
 {
-  "reviewed_on": "2026-10-29",
+  "reviewed_on": "2026-11-04",
   "projects": [
     {
       "repository": "https://github.com/lazypanic999/tunnelscope",
-      "git_tree_sha": "7dee8a95f0cbb5afd83589dbd1ba10069c7aedc1",
+      "git_tree_sha": "1668543aa36afe64e0e6ea9cc8296d88f98d1d3f",
       "evidence": [
         {
           "url": "https://github.com/lazypanic999/tunnelscope/blob/main/README.md",
-          "git_blob_sha": "c4e5f9396f3d95c4cd7a4f99b3e3a4aaab1c8ee8"
+          "git_blob_sha": "939cce93af4fb593fc2f722f2e8915e761de0920"
         },
         {
-          "url": "https://github.com/lazypanic999/tunnelscope/blob/main/docs/releases/v0.4.1.md",
-          "git_blob_sha": "a101c57aca9f154103fdea8470b3d1268b7a5eaf"
+          "url": "https://github.com/lazypanic999/tunnelscope/blob/main/docs/releases/v0.6.0.md",
+          "git_blob_sha": "7c4bb64ce3f646a81695d25c656d1b1e42f0ab76"
         },
         {
-          "url": "https://github.com/lazypanic999/tunnelscope/blob/main/docs/validation/two-vm-field-test.md",
-          "git_blob_sha": "96207225a7f4620d5738acff93ddba2d4e1a5446"
+          "url": "https://github.com/lazypanic999/tunnelscope/blob/main/docs/diagnose.md",
+          "git_blob_sha": "fe66f501c25d135f2d73364f938abe1a694908be"
         },
         {
-          "url": "https://github.com/lazypanic999/tunnelscope/blob/main/docs/report-ui.md",
-          "git_blob_sha": "8ac64daf343cb562df31ff7bd4c3ebd0d974bf70"
+          "url": "https://github.com/lazypanic999/tunnelscope/blob/main/docs/validation/kubernetes-calico.md",
+          "git_blob_sha": "8f042d2ecacddfc87825eb53a628def8b9531743"
+        },
+        {
+          "url": "https://github.com/lazypanic999/tunnelscope/blob/main/docs/validation/two-vm-wireguard.md",
+          "git_blob_sha": "034fc196c5f2dd39a26415c985c515db7762340d"
         }
       ]
     },
     {
       "repository": "https://github.com/lazypanic999/CorePulse",
-      "git_tree_sha": "00412cd0bafbfbac0c1ae119f8f3daf2609402d5",
+      "git_tree_sha": "88fcf136df6ea4ecc040abc9c63513a5a1282eec",
       "evidence": [
         {
           "url": "https://github.com/lazypanic999/CorePulse/blob/main/README.md",
-          "git_blob_sha": "52b6ede72360cdd43da02d297cefe1f9a77f56bb"
+          "git_blob_sha": "be38f66d7b85755803e612905d89da46d2fc2763"
+        },
+        {
+          "url": "https://github.com/lazypanic999/CorePulse/blob/main/CHANGELOG.md",
+          "git_blob_sha": "3edcd7b7cba18f168c28f4b959aff8cb1d6162a4"
+        },
+        {
+          "url": "https://github.com/lazypanic999/CorePulse/blob/main/docs/validated-signals.md",
+          "git_blob_sha": "915de06044eeb421062bedf0fa29819bce9575e0"
+        },
+        {
+          "url": "https://github.com/lazypanic999/CorePulse/blob/main/docs/telemetry-and-dataset.md",
+          "git_blob_sha": "472948d4fde2c37c10dd4856ed4dd3dc063350c5"
         },
         {
           "url": "https://github.com/lazypanic999/CorePulse/blob/main/docs/lab-integration.md",
-          "git_blob_sha": "1390b3d312c6b3bffe343f6990a67c894e616b8f"
+          "git_blob_sha": "57f5cd42aeaea437c47364fe15145ed8a03abedd"
         },
         {
-          "url": "https://github.com/lazypanic999/CorePulse/blob/main/internal/corepulse/discovery.go",
-          "git_blob_sha": "f28fb4fc69ef3b68209a95be557e225651f9435b"
+          "url": "https://github.com/lazypanic999/CorePulse/blob/main/internal/dashboard/server.go",
+          "git_blob_sha": "cbe8effbfe9fc9d513f40748c032c96298528531"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/lazypanic999/doguboxd",
+      "git_tree_sha": "1e84e1999f7ad4b83cc445a01c5e9a04dccefcb0",
+      "evidence": [
+        {
+          "url": "https://github.com/lazypanic999/doguboxd/blob/main/README.md",
+          "git_blob_sha": "b8e5f80a3c566fa4d5b975348f6b45f74303a80f"
         },
         {
-          "url": "https://github.com/lazypanic999/CorePulse/blob/main/internal/corepulse/faults.go",
-          "git_blob_sha": "00c94f87280c80ce88c39fae38293463c2560d62"
+          "url": "https://github.com/lazypanic999/doguboxd/blob/main/web/site-src/app.js",
+          "git_blob_sha": "2370fbba528e049972caaa330d33b1c7bb7fb1ce"
+        },
+        {
+          "url": "https://github.com/lazypanic999/doguboxd/blob/main/web/site-src/importer.js",
+          "git_blob_sha": "c8f545c4d21981c75affde897b14508d2e824a3c"
+        },
+        {
+          "url": "https://github.com/lazypanic999/doguboxd/blob/main/web/worker/index.js",
+          "git_blob_sha": "abd8f884a523f881f10abf209b4af20f98730e4f"
+        },
+        {
+          "url": "https://github.com/lazypanic999/doguboxd/blob/main/android/app/src/main/java/com/doguboxd/app/MainActivity.java",
+          "git_blob_sha": "626ec8699fb13ec36217b6f4fd4e7607e68e475b"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/lazypanic999/huawei-band-nabiz-widget",
+      "git_tree_sha": "fee13159fa10e982676fcef702745947bc71609d",
+      "evidence": [
+        {
+          "url": "https://github.com/lazypanic999/huawei-band-nabiz-widget/blob/main/README.md",
+          "git_blob_sha": "46656017b26f9e92b893e6d8709e888cce8c5d5d"
+        },
+        {
+          "url": "https://github.com/lazypanic999/huawei-band-nabiz-widget/blob/main/nabiz_gostergesi.pyw",
+          "git_blob_sha": "b08168f823e00fd315d594beff5d754dc04eb849"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/lazypanic999/Itinerarium",
+      "git_tree_sha": "e314a20203fce3b05bf8706fe13646c8d15d2faa",
+      "evidence": [
+        {
+          "url": "https://github.com/lazypanic999/Itinerarium/blob/main/README.md",
+          "git_blob_sha": "3938d99ae96184cf5db580a24e16a396b35142a5"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/lazypanic999/OpsCommand",
+      "git_tree_sha": "479eac7db1cb0729d46603bf8b2b13d209c0a478",
+      "evidence": [
+        {
+          "url": "https://github.com/lazypanic999/OpsCommand/blob/main/README.md",
+          "git_blob_sha": "e39e624d274494ba9b78ffcc8285c15cd9b25fb7"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/lazypanic999/open5gs-ueransim-kubernetes",
+      "git_tree_sha": "29c3813fc40c55ea3b5b4701027cb60081787cf8",
+      "evidence": [
+        {
+          "url": "https://github.com/lazypanic999/open5gs-ueransim-kubernetes/blob/main/README.md",
+          "git_blob_sha": "6977dc9c5f4b75f3e9dcd633fde02141e97fbc51"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/lazypanic999/two-server-wordpress-lab",
+      "git_tree_sha": "da5a80ce8725fa7a30fdfbb66f7d152fdd69dff2",
+      "evidence": [
+        {
+          "url": "https://github.com/lazypanic999/two-server-wordpress-lab/blob/main/README.md",
+          "git_blob_sha": "4e2af4e83a6f0a2a449dd5d1abf3a707770e56d2"
         }
       ]
     }
