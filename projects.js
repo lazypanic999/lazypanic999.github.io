@@ -1,13 +1,14 @@
 'use strict';
 (() => {
   const albums = {
-    tunnelscope: {title:'TunnelScope · v0.6.0 alpha', repo:'tunnelscope', images:[
-      ['tunnelscope-report-ui.png','docs/images/report-ui.png','Çevrimdışı HTML raporu — depodaki örnek rapor görünümü','Offline HTML report — example report view from the repository'],
-      ['tunnelscope-two-vm-results.png','docs/images/two-vm-results.png','Ubuntu ↔ Debian — önceki iki VM doğrulama özeti','Ubuntu ↔ Debian — earlier two-VM validation summary']
+    tunnelscope: {title:'TunnelScope · v0.9.6 alpha', repo:'tunnelscope', images:[
+      ['tunnelscope-v07-report.png','docs/images/v07-report.png','Çevrimdışı HTML rapor: probların boyutu, yönü ve sonucu','Offline HTML report: probe size, direction and outcome'],
+      ['tunnelscope-v07-terminal.png','docs/images/v07-terminal.png','tunnelscope show: 64 ve 1200 baytlık probların cevabı dönüyor, 1400 baytlıklar alıcıya ulaşıyor ama cevapları kayboluyor','tunnelscope show: 64- and 1200-byte probes get replies; 1400-byte probes reach the receiver but their replies are lost']
     ]},
-    corepulse: {title:'CorePulse · Go dashboard', repo:'CorePulse', images:[
-      ['corepulse-dashboard-desktop.png','assets/dashboard-glass-desktop.png','Canlı laboratuvar — kaynak metrikleri ve deney kaydı (31 Ekim 2026)','Live lab — resource metrics and experiment record (31 October 2026)'],
-      ['corepulse-dashboard-mobile.png','assets/dashboard-glass-mobile-full.png','Dar ekran görünümü — gerçek kaynak metrikleri; model tahmini içermez','Narrow layout — real resource metrics; no model predictions']
+    corepulse: {title:'CorePulse · v0.2.4 preview', repo:'CorePulse', images:[
+      ['corepulse-dashboard-verified-lab.jpg','assets/dashboard-verified-lab.jpg','Servis yolu: AMF, SMF, UE, gNB ve UPF hazır, UPF\'ye giden 2 pingin 2\'si ulaşıyor','Service path: AMF, SMF, UE, gNB and UPF ready, 2 of 2 pings reach the UPF'],
+      ['corepulse-dashboard-degraded.png','assets/dashboard-degraded.png','8 Kasım: AMF ve ardından UPF çöktükten sonra bütün pod\'lar hazır görünüyor ama N2 kopuk, SMF eski UPF adresini deniyor ve ping geçmiyor','8 November: after an AMF crash and then a UPF crash every pod reports ready, but N2 is lost, SMF keeps trying the old UPF address and pings fail'],
+      ['corepulse-dashboard-live.png','assets/dashboard-desktop.png','6 Kasım: canlı laboratuvara bağlı dashboard ve deney geçmişi','6 November: the dashboard connected to the live lab, with run history']
     ]},
     itinerarium: {title:'Itinerarium', repo:'Itinerarium', images:[
       ['itinerarium-plan.jpeg','screenshots/plan.jpeg','Gün gün seyahat planı','Day-by-day trip planner'],

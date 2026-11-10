@@ -4,7 +4,7 @@ const savePreference = (key, value) => { try { localStorage.setItem(key, value);
 let language = readPreference('ds-language', 'tr');
 if (!['tr','en'].includes(language)) language = 'tr';
 let activeFilter = 'all';
-const descriptions = {tr:'Doğukan Sağlık — Bilgisayar mühendisliği öğrencisi. Linux, bulut altyapısı, Kubernetes ve full-stack yazılım projeleri.',en:'Doğukan Sağlık — Computer Engineering student working with Linux, cloud infrastructure, Kubernetes and full-stack software.'};
+const descriptions = {tr:'Doğukan Sağlık. Ankara\'da bilgisayar mühendisliği öğrencisi. Linux sunucuları, Kubernetes üzerinde 5G laboratuvarı ve ağ ölçüm araçları.',en:'Doğukan Sağlık. Computer engineering student in Ankara. Linux servers, a 5G lab on Kubernetes and network measurement tools.'};
 function applyLanguage(next) {
   language = next;
   document.documentElement.lang = next;
@@ -14,7 +14,7 @@ function applyLanguage(next) {
   button.innerHTML = `${next === 'tr' ? 'EN' : 'TR'} <span aria-hidden="true">↗</span>`;
   button.setAttribute('aria-label', next === 'tr' ? 'Switch to English' : 'Türkçeye geç');
   document.querySelector('meta[name="description"]').content = descriptions[next];
-  document.querySelector('meta[property="og:description"]').content = next === 'tr' ? 'Koddan çalışan sistemlere. Projeler, deneyim ve güncel CV.' : 'From code to working systems. Projects, experience and current CV.';
+  document.querySelector('meta[property="og:description"]').content = next === 'tr' ? 'Linux sunucuları, Kubernetes üzerinde 5G laboratuvarı ve ağ ölçüm araçları. Projeler, deneyim ve güncel CV.' : 'Linux servers, a 5G lab on Kubernetes and network measurement tools. Projects, experience and current CV.';
   document.getElementById('copy-status').textContent = '';
   updateThemeLabel();
   applyFilter(activeFilter, Boolean(document.getElementById('filter-status').textContent));
